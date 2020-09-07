@@ -1,10 +1,22 @@
 .header {
-  display: block;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.logo {
-  display: inline-block;
-  padding: 24px;
+.header-content {
+  flex-grow: 1;
+}
+
+.logo-wrapper {
+  display: block;
+  padding: 72px 24px;
+}
+
+.logo-title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #000;
+  text-align: left;
 }
