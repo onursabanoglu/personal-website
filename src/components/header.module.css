@@ -1,0 +1,10 @@
+.header {
+  display: block;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.logo {
+  display: inline-block;
+  padding: 24px;
+}
