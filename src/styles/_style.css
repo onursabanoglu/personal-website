@@ -4,20 +4,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--f-family);
+  font-size: var(--f-default);
+  font-weight: var(--f-weight-normal);
+  line-height: var(--lh-default);
+  color: var(--gray-90);
+  background-color: var(--gray-10);
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
-}
-
-body {
-  font-family: 'Gilroy-Regular';
-  font-weight: normal;
-  font-style: normal;
-  overflow-x: hidden;
-  background-color: #DFE3E6;
+:focus {
+  outline: 0;
 }

@@ -1,3 +1,25 @@
 :root {
+
+  --c-black: #000000;
+  --c-white: #FFFFFF;
+
+  --gray-10: #F7F7F7;
+  --gray-90: #252525;
+
+  --f-family: 'Gilroy', sans-serif;
+
+  --f-weight-normal: 400;
+  --f-weight-bold: 700;
+
+  --f-default: 16px;
+  --lh-default: 1.5;
+
   --space-unit: 16px;
+  --space-4: calc( var(--space-unit ) * 25 / 100 );
+  --space-8: calc( var(--space-unit ) * 50 / 100 );
+  --space-12: calc(var(--space-unit ) * 75 / 100 );
+  --space-16: var(--space-unit);
+  --space-20: calc( var(--space-unit ) * 125 / 100 );
+  --space-24: calc( var(--space-unit ) * 150 / 100 );
+  --space-32: calc( var(--space-unit ) * 200 / 100 );
 }

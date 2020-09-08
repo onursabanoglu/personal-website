@@ -9,12 +9,12 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/blog/`,
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
     `gatsby-transformer-remark`,
     `gatsby-remark-reading-time`,
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
   ]
 }
