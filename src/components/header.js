@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import Footer from './footer'
 import headerStyles from './header.module.css'
-import Logo from '../images/logo.png'
+
 
 const Header = () => {
   return (
