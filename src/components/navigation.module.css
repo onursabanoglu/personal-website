@@ -9,6 +9,7 @@
 .nav-link {
   color: var(--c-black);
   display: inline-block;
+  font-size: calc( var(--f-default) * 1.125 );
   font-weight: var(--f-weight-bold);
   padding: var(--space-8) var(--space-12);
 }

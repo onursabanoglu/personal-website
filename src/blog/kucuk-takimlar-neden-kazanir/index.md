@@ -12,7 +12,7 @@ Jeff Bezos’un Amazon’da çok önemli bir felsefesi vardır.
 “Eğer bir takım iki pizza ile beslenemiyorsa, o takım çok büyüktür.”
 
 
-### Ringlemann Etkisi (Sosyal Kaytarma)
+## Ringlemann Etkisi (Sosyal Kaytarma)
 
 Genellikle çok fazla insandan oluşan büyük grupların daha fazla iş başardığını düşünürüz. Daha fazla insan daha fazla iş demektir. Bu çoğu durum için geçerli olsa da her zaman bu şekilde olmaz. işte “Ringlemann etkisi” ise bunun tam tersini savunur.
 
@@ -27,7 +27,7 @@ Psikologlar bu durumu şöyle açıklarlar; Ortak çaba durumunda, bireysel soru
 
 
 
-### Peki Neden Hala Ekipleri Büyütüyoruz?
+## Peki Neden Hala Ekipleri Büyütüyoruz?
 
 Bir noktadan sonra özellikle şirketler belirli bir oranda finansal ve pazar başarısı elde ediyorlar ve işler bir noktadan sonra, işler ilk günlerde olduğu gibi çalışmıyor. Bu yüzden bir sorunla daha fazla insan ilgilenmeye başlıyor. Daha fazla insan, daha fazla zaman ve daha fazla bir kaynak, onları bir sonraki seviyeye taşımak için yardımcı olduğunu düşünüyorlar.
 

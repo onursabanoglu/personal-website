@@ -30,6 +30,7 @@
   --space-20: calc( var(--space-unit ) * 125 / 100 );
   --space-24: calc( var(--space-unit ) * 150 / 100 );
   --space-32: calc( var(--space-unit ) * 200 / 100 );
+  --space-48: calc( var(--space-unit ) * 300 / 100 );
   --space-64: calc( var(--space-unit ) * 400 / 100 );
   --space-128: calc( var(--space-unit ) * 800 / 100 );
 }
