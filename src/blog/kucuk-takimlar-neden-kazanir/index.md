@@ -9,7 +9,7 @@ description: "İş dünyasında çoğu zaman bir takımda daha fazla insanın ol
 
 Jeff Bezos’un Amazon’da çok önemli bir felsefesi vardır.
 
-“Eğer bir takım iki pizza ile beslenemiyorsa, o takım çok büyüktür.”
+>“Eğer bir takım iki pizza ile beslenemiyorsa, o takım çok büyüktür.”
 
 
 ## Ringlemann Etkisi (Sosyal Kaytarma)
@@ -21,6 +21,9 @@ Ringlemann etkisi, bir grubun bireysel üyelerinin, grubun büyüklüğü arttı
 1913 senesinde Atların performansını araştıran bir mühendis, bir faytonu çeken iki atın performansının, tek bir atın performansının iki katı olmadığını farkediyor. Atlar üzerindeki bu deneyini bu sefer insanlar üzerinde yapmak istiyor.
 
 Bir grup erkeğe halat çektirip her birinin harcadığı performansı ölçüyor. Birlikte halat çeken iki kişinin, tek başına çekerken harcadıkları performansının sadece %93 ‘ü oranında başarılı oluyorlar. Gruptaki kişi sayısı arttıkça, üç kişide %85, dört kişide %77 ve sekiz kişide bu performans %50’ye kadar düşüyor.
+
+Şunu izleyebilirsiniz: https://www.youtube.com/watch?v=ie86AKyBhPM
+
 
 
 Psikologlar bu durumu şöyle açıklarlar; Ortak çaba durumunda, bireysel sorumluluğun etkisi daha azdır, bu yüzden her şeyi verme motivasyonu eksik kalır, kişisel katkıları ayırt edilemez.

@@ -17,7 +17,7 @@ body {
   font-weight: var(--f-weight-normal);
   line-height: var(--lh-default);
   color: var(--c-black);
-  background-color: var(--c-white);
+  background-color: var(--c-gray-10);
   overflow-x: hidden;
 }
 
@@ -25,9 +25,15 @@ a {
   text-decoration: none;
 }
 
+::selection {
+  color: var(--c-white);
+  background-color: var(--c-razz);
+}
+
 :focus {
   outline: 0;
 }
+
 
 .hero-wrapper {
   display: flex;
@@ -45,7 +51,7 @@ a {
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 15% 35%;
-    background-image: linear-gradient(45deg,var(--c-gray-20),var(--c-gray-20));
+    background-image: linear-gradient(45deg,var(--c-gray-30),var(--c-gray-30));
     z-index: 2;
     margin-bottom: var(--space-12);
   }
@@ -98,9 +104,35 @@ a {
     font-size: calc( var(--f-default) * 1.125 );
     line-height: 1.75;
 
+    a {
+      font-weight: var(--f-weight-medium);
+      color: var(--c-razz);
+    }
+
+    a:matches(:hover, :focus) {
+      text-decoration: underline;
+    }
+
+
     p {
-      color: var(--c-gray-70);
+      color: var(--c-gray-80);
       margin-bottom: var(--space-32);
+
+      strong {
+        color: var(--c-gray-90);
+      }
+    }
+
+    blockquote {
+      border-left: var(--space-4) solid var(--c-razz);
+      background-color: var(--c-gray-30);
+      font-size: var(--f-default);
+      font-style: italic;
+      padding: var(--space-12);
+
+      p {
+        margin: 0;
+      }
     }
 
     h2 {
@@ -120,5 +152,50 @@ a {
         font-size: calc( var(--f-default) * 1.5 );
       }
     }
+  }
+}
+
+.blog-post-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .blog-post {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+    border-bottom: 1px solid var(--c-gray-30);
+  }
+
+  .blog-post:first-child {
+    border-top: 1px solid var(--c-gray-30);
+  }
+
+  .blog-post-title {
+    color: var(--c-gray-90);
+    margin-bottom: var(--space-8);
+
+    a {
+      font-weight: var(--f-weight-semibold);
+      color: inherit;
+      font-size: calc( var(--f-default) * 1.5 );
+    }
+
+    a:matches(:hover, :focus) {
+      color: var(--c-razz);
+    }
+  }
+
+  .post-summary {
+    color: var(--c-gray-70);
+    margin-bottom: var(--space-24);
+    font-size: calc( var(--f-default) * 1.125 );
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
+  .post-meta {
+    font-size: var(--f-default);
+    color: var(--c-gray-70);
   }
 }

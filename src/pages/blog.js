@@ -2,8 +2,6 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from '../components/layout'
-import Header from '../components/header'
-import Footer from '../components/footer'
 
 
 const Blog = () => {
@@ -13,7 +11,7 @@ const Blog = () => {
         edges {
           node {
             frontmatter {
-              date
+              date(formatString: "MMMM DD, YYYY")
               title
               description
             }
@@ -32,16 +30,24 @@ const Blog = () => {
 
   return (
     <Layout>
-      <div>
+      <div className="blog-post-wrapper">
         {data.allMarkdownRemark.edges.map((edge) => {
           return (
-            <li>
-              <Link to={`${edge.node.fields.slug}`}>
-                <h3>{edge.node.frontmatter.title}</h3>
-                  <span>{edge.node.fields.readingTime.text}</span>
+            <div className="blog-post">
+                <h3 className="blog-post-title">
+                  <Link  to={`${edge.node.fields.slug}`}>
+                    {edge.node.frontmatter.title}
+                  </Link>
+                </h3>
+                <div className="post-summary">
+                  {edge.node.frontmatter.description}
+                </div>
+                <div className="post-meta">
                   <span>{edge.node.frontmatter.date}</span>
-              </Link>
-            </li>
+                  &nbsp; | &nbsp;
+                  <span>{edge.node.fields.readingTime.text}</span>
+                </div>
+            </div>
           )
         })}
       </div>
