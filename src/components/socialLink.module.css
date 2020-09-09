@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   padding-top: var(--space-64);
   padding-bottom: var(--space-64);
+  margin-top: auto;
 
   .social-link {
     display: inline-block;

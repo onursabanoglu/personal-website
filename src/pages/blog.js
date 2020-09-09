@@ -2,6 +2,8 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from '../components/layout'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 
 const Blog = () => {
@@ -30,7 +32,6 @@ const Blog = () => {
 
   return (
     <Layout>
-      <h1>Blog</h1>
       <div>
         {data.allMarkdownRemark.edges.map((edge) => {
           return (
