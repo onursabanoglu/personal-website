@@ -3,12 +3,20 @@
   --c-black: #000000;
   --c-white: #FFFFFF;
 
-  --gray-10: #F7F7F7;
-  --gray-90: #252525;
+  --c-gray-10: #F7F7F7;
+  --c-gray-20: #F1F1F1;
+  --c-gray-30: #E5E5E5;
+  --c-gray-70: #666666;
+  --c-gray-80: #484848;
+  --c-gray-90: #252525;
+
+  --c-razz: #F2055C;
 
   --f-family: 'Gilroy', sans-serif;
 
   --f-weight-normal: 400;
+  --f-weight-medium: 500;
+  --f-weight-semibold: 600;
   --f-weight-bold: 700;
 
   --f-default: 16px;
@@ -22,4 +30,6 @@
   --space-20: calc( var(--space-unit ) * 125 / 100 );
   --space-24: calc( var(--space-unit ) * 150 / 100 );
   --space-32: calc( var(--space-unit ) * 200 / 100 );
+  --space-64: calc( var(--space-unit ) * 400 / 100 );
+  --space-128: calc( var(--space-unit ) * 800 / 100 );
 }

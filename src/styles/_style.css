@@ -16,8 +16,8 @@ body {
   font-size: var(--f-default);
   font-weight: var(--f-weight-normal);
   line-height: var(--lh-default);
-  color: var(--gray-90);
-  background-color: var(--gray-10);
+  color: var(--c-black);
+  background-color: var(--c-white);
   overflow-x: hidden;
 }
 
@@ -28,3 +28,53 @@ a {
 :focus {
   outline: 0;
 }
+
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .hero-content {
+    flex-grow: 1;
+    height: 100%;
+    margin-top: var(--space-128);
+  
+    .job-title {
+      position: relative;
+      display: inline-block;
+      font-size: calc( var(--f-default) * 1.25 );
+      line-height: 1.5;
+      letter-spacing: 1px;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: 75% 35%;
+      background-image: linear-gradient(45deg,var(--c-gray-20),var(--c-gray-20));
+      z-index: 2;
+      margin-bottom: var(--space-12);
+    }
+  }
+
+  .hero-heading {
+    font-size: calc( var(--f-default) * 4 );
+    font-weight: var(--f-weight-bold);
+    line-height: 1.2;
+    color: var(--c-black);
+    margin-top: var(--space-24)
+  }
+
+  .hero-subheading {
+    font-size: calc( var(--f-default) * 1.25 );
+    font-weight: var(--f-weight-medium);
+    color: var(--c-black);
+    margin-top: var(--space-8)
+  }
+
+}
+

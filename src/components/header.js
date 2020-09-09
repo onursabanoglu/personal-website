@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import headerStyles from './header.module.css'
 
-import Navbar from './navbar'
+import Navbar from './navigation'
 
 
 const Header = () => {

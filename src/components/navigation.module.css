@@ -1,18 +1,18 @@
 
-.navbar-wrapper {
+.navigation {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   margin-left: auto;
 }
 
-.navbar-link {
+.nav-link {
   color: var(--c-black);
   display: inline-block;
   font-weight: var(--f-weight-bold);
   padding: var(--space-8) var(--space-12);
 }
 
-.navbar-link:hover, .navbar-link.active {
+.nav-link:hover, .nav-link.active {
   text-decoration: underline;
 }
