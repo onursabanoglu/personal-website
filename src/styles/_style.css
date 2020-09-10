@@ -84,6 +84,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: var(--space-128);
+  overflow: hidden;
 
   .post-title {
     color: var(--c-black);
@@ -153,7 +154,6 @@ a {
       margin-bottom: var(--space-32);
       color: var(--c-white);
       overflow: auto;
-      font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
       font-size: var(--f-default)
     }
   }

@@ -27,14 +27,20 @@ Değişkenler, renkleri, yazı tiplerini ve boşluk değerleri gibi CSS özellik
 ### Değişken Tanımlama
 
 
-```css
-:root {
-  --primary-color: #1A73E8;
-}
+```html
+<label class="c-custom-checkbox">
+    <input type="checkbox" />
 
-button {
-  background-color: var(--primary-color);
-}
+    <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+        <!-- The background -->
+        <rect class="checkbox__bg" width="35" height="35" x="-2" y="-2" stroke="currentColor" fill="none" stroke-width="3" rx="6"
+            ry="6"></rect>
+        <!-- The checkmark-->
+        <polyline class="checkbox__checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
+    </svg>
+
+    <span>The checkbox label text</span>
+</label>
 ```
 
 
