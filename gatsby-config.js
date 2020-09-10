@@ -25,12 +25,19 @@ module.exports = {
               maxWidth: 768,
               linkImagestoOrginal: false
             }
-          }
+          },
+          `gatsby-remark-reading-time`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases:{sh: "bash", js:"javascript"},
+              showLineNumbers: true,
+            }
+          },
         ]
       }
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-remark-reading-time`,
     `gatsby-plugin-postcss`,
   ]
 }

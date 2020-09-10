@@ -27,9 +27,13 @@ Değişkenler, renkleri, yazı tiplerini ve boşluk değerleri gibi CSS özellik
 ### Değişken Tanımlama
 
 
-```
-function test() {
-  console.log("notice the blank line before this function?");
+```css
+:root {
+  --primary-color: #1A73E8;
+}
+
+button {
+  background-color: var(--primary-color);
 }
 ```
 
