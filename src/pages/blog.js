@@ -31,6 +31,7 @@ const Blog = () => {
   return (
     <Layout>
       <div className="blog-post-wrapper">
+        <h1 className="blog-title">Blog</h1>
         {data.allMarkdownRemark.edges.map((edge) => {
           return (
             <div className="blog-post">
