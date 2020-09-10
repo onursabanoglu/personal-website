@@ -8,10 +8,12 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 
   .content {
     flex-grow: 1;
     margin-top: var(--space-128);
+    display: flex;
   }
 }

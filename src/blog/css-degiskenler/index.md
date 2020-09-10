@@ -1,8 +1,10 @@
 ---
 title: CSS’te Değişkenler
-date: "2020-08-18"
+date: "2018-08-18"
 description: "Değişkenler programlama dillerinin neredeyse hepsinde kullanılan bir özelliktir. Frontend dünyasında ise, değişkenler en çok talep edilen CSS özelliklerinden birisiydi."
 ---
+
+![Thumbnail](./browser-support.png)
 
 
 Değişkenler programlama dillerinin neredeyse hepsinde kullanılan bir özelliktir. Frontend dünyasında ise, değişkenler en çok talep edilen CSS özelliklerinden birisiydi. Bu özelliği önceden sadece CSS Önişlemcileri (pre-processor) ile birlikte kullanabiliyorduk. Büyük projelerde, derlenme sürelerinin uzun sürmesi gibi durumlar Önişlemci kullanmanın dezavantajlarını ortaya çıkardı. CSS’in bugün geldiği noktaya bakarsak, herhangi bir Önişlemciye ihtiyaç duymadan bu özelliği kullanmamızı sağlıyor.
@@ -23,3 +25,12 @@ Değişkenler, renkleri, yazı tiplerini ve boşluk değerleri gibi CSS özellik
 
 
 ### Değişken Tanımlama
+
+
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
+

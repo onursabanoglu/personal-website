@@ -13,7 +13,23 @@ module.exports = {
         path: `${__dirname}/src/blog`,
       },
     },
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 768,
+              linkImagestoOrginal: false
+            }
+          }
+        ]
+      }
+    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-remark-reading-time`,
     `gatsby-plugin-postcss`,
   ]

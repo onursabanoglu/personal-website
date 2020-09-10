@@ -19,6 +19,9 @@ body {
   color: var(--c-black);
   background-color: var(--c-gray-10);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
 a {
@@ -39,7 +42,6 @@ a {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 100%;
 
 
   .job-title {
@@ -115,8 +117,9 @@ a {
 
 
     p {
-      color: var(--c-gray-80);
+      color: var(--c-gray-70);
       margin-bottom: var(--space-32);
+      font-weight: var(--f-weight-medium);
 
       strong {
         color: var(--c-gray-90);
@@ -142,6 +145,17 @@ a {
       margin-top: var(--space-48);
       margin-bottom: var(--space-12);
     }
+
+    pre {
+      background-color: var(--c-gray-90);
+      padding: var(--space-20);
+      margin-top: var(--space-32);
+      margin-bottom: var(--space-32);
+      color: var(--c-white);
+      overflow: auto;
+      font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+      font-size: var(--f-default)
+    }
   }
 
   @media (--tablet-vw) {
@@ -155,68 +169,3 @@ a {
   }
 }
 
-.blog-post-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: var(--space-128);
-
-  .blog-title {
-    display: inline-block;
-    font-size: calc( var(--f-default) * 3 );
-    line-height: 1;
-    margin-bottom: var(--space-48);
-    background-repeat: no-repeat;
-    background-position: left -32px bottom 4px;
-    background-size: var(--space-64) var(--space-12);
-    background-image: linear-gradient(45deg,var(--c-razz),var(--c-razz));
-  }
-
-  .blog-post {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
-    border-top: 1px solid var(--c-gray-30);
-  }
-
-  .blog-post:last-child {
-    border-bottom: 1px solid var(--c-gray-30);
-  }
-
-  .blog-post-title {
-    color: var(--c-gray-90);
-    margin-bottom: var(--space-8);
-   
-    a {
-      font-weight: var(--f-weight-semibold);
-      color: inherit;
-      font-size: calc( var(--f-default) * 1.5 );
-      background-repeat: no-repeat;
-      background-position: left bottom;
-      background-size: 0% 35%;
-      background-image: linear-gradient(45deg,var(--c-gray-30),var(--c-gray-30));
-      z-index: 2;
-      transition: all .6s cubic-bezier(.165,.84,.44,1);
-    }
-
-    a:matches(:hover, :focus) {
-      color: var(--c-razz);
-      background-size: 100% 35%;
-    }
-  }
-
-  .post-summary {
-    color: var(--c-gray-60);
-    margin-bottom: var(--space-20);
-    font-size: calc( var(--f-default) * 1.125 );
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    letter-spacing: 0.25px;
-  }
-
-  .post-meta {
-    font-size: var(--f-default);
-    font-weight: var(--f-weight-medium);
-    color: var(--c-gray-50);
-  }
-}
