@@ -6,31 +6,27 @@ description: "Camel case, isimlendirme türünde ilk harf küçük harf ile baş
 
 
 
-### Camel Case
+## Camel Case
 
 Camel case, isimlendirme türünde ilk harf küçük harf ile başlar ve sonraki her yeni sözcüğün ilk harfi büyük olmalıdır.
 
-Örnek:
+Örnek: <br>
 ```
 buttonPrimaryHover
 ```
 
+## Snake Case
 
+Snake case, isimlendirme türünde her yeni sözcüğün arası **‘_’ (alt çizgi)** ile ayrılır, ve her kelime küçük harf ile başlar.
 
-### Snake Case
-
-Snake case, isimlendirme türünde her yeni sözcüğün arası ‘_’ (alt çizgi) ile ayrılır, ve her kelime küçük harf ile başlar.
-
-Örnek: 
+Örnek:
 ```
 button_primary_hover
 ```
 
+## Kebap Case
 
-
-### Kebap Case
-
-Kebap case, isimlendirme türünde ise her yeni sözcüğün arası ‘-‘ (tire) ile ayrılır, ve her kelime küçük harf ile başlar.
+Kebap case, isimlendirme türünde ise her yeni sözcüğün arası **‘-‘ (tire)** ile ayrılır, ve her kelime küçük harf ile başlar.
 
 Örnek: 
 ```
@@ -38,7 +34,7 @@ button-primary-hover
 ```
 
 
-### Pascal Case
+## Pascal Case
 
 PascalCase, isimlendirme türü ise camel case ile aynı sayılabilir, aralarındaki tek fark camel case ‘de ilk kelimenin ilk harfi küçük iken, Pascal case ‘de Her kelimenin ilk harfi büyük yazılır.
 
@@ -49,9 +45,9 @@ ButtonPrimaryHover
 ```
 
 
-### Upper Case
+## Upper Case
 
-Upper case, isimlendirme türünde bütün kelimeler büyük harfle yazılır ve kelimelerin arası ‘_’ (alt çizgi) ile ayrılır.
+Upper case, isimlendirme türünde bütün kelimeler büyük harfle yazılır ve kelimelerin arası **‘_’ (alt çizgi)** ile ayrılır.
 
 Örnek: 
 ```

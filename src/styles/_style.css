@@ -106,6 +106,8 @@ a {
   .post-content {
     font-size: calc( var(--f-default) * 1.125 );
     line-height: 1.75;
+    color: var(--c-gray-70);
+    font-weight: var(--f-weight-medium);
 
     a {
       font-weight: var(--f-weight-medium);
@@ -118,43 +120,82 @@ a {
 
 
     p {
-      color: var(--c-gray-70);
       margin-bottom: var(--space-32);
-      font-weight: var(--f-weight-medium);
 
       strong {
-        color: var(--c-gray-90);
+        color: var(--c-gray-80);
+        font-weight: var(--f-weight-semibold);
       }
     }
 
     blockquote {
-      border-left: var(--space-4) solid var(--c-razz);
+      border-left: var(--space-8) solid var(--c-razz);
       background-color: var(--c-gray-30);
-      font-size: var(--f-default);
-      font-style: italic;
-      padding: var(--space-12);
+      padding: var(--space-20);
 
       p {
         margin: 0;
       }
     }
 
-    h2 {
+    h2, h3, h4 {
       color: var(--c-gray-90);
-      font-size: calc( var(--f-default) * 1.25 );
       line-height: 1.2;
+    }
+
+    h2 {
+      font-size: calc( var(--f-default) * 1.5 );
       margin-top: var(--space-48);
-      margin-bottom: var(--space-12);
+      margin-bottom: var(--space-24);
+    }
+
+    h3 {
+      font-size: calc( var(--f-default) * 1.25 );
+      margin-top: var(--space-32);
+      margin-bottom: var(--space-20);
+    }
+
+    h4 {
+      font-size: calc( var(--f-default) * 1.125 );
+      margin-top: var(--space-24);
+      margin-bottom: var(--space-16);
     }
 
     pre {
       background-color: var(--c-gray-90);
-      padding: var(--space-20);
-      margin-top: var(--space-8);
-      margin-bottom: var(--space-64);
+      padding: var(--space-12) var(--space-20);
+      margin-top: var(--space-32);
+      margin-bottom: var(--space-32);
       color: var(--c-white);
       overflow: auto;
-      font-size: var(--f-default)
+      font-size: var(--f-default);
+      border-radius: var(--space-8);
+
+      code {
+        background-color: inherit;
+        border: inherit;
+        color: inherit;
+        padding: inherit;
+        display: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+
+    code {
+      background-color: var(--c-gray-30);
+      border: 1px solid var(--c-gray-40);
+      font-size: var(--f-default);
+      font-weight: var(--f-weight-medium);
+      line-height: 1;
+      color: var(--c-gray-90);
+      padding: var(--space-4) var(--space-8); 
+      display: inline-block;
+    }
+
+    ul {
+      margin-bottom: var(--space-32);
+      padding-left: var(--space-32);
     }
   }
 
@@ -163,7 +204,15 @@ a {
       font-size: calc( var(--f-default) * 1.25 );
 
       h2 {
+        font-size: calc( var(--f-default) * 1.75 );
+      }
+
+      h3 {
         font-size: calc( var(--f-default) * 1.5 );
+      }
+  
+      h4 {
+        font-size: calc( var(--f-default) * 1.25 );
       }
     }
   }
