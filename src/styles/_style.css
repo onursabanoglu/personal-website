@@ -150,8 +150,8 @@ a {
     pre {
       background-color: var(--c-gray-90);
       padding: var(--space-20);
-      margin-top: var(--space-32);
-      margin-bottom: var(--space-32);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-64);
       color: var(--c-white);
       overflow: auto;
       font-size: var(--f-default)
