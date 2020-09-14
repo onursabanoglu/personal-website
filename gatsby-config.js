@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Onur Sabanoglu`,
-    description: `Onur Sabanoglu Personal Website`,
-    author: `Onur Sabanoglu`,
+    titleTemplate: "%s · The Real Hero",
+    description: `Programmer of boxes`,
+    url: 'https://onursabanoglu.com/',
+    author: "Onur Şabanoğlu",
   },
 
   plugins: [
@@ -37,7 +39,20 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Onur Şabanoğlu',
+        short_name: 'Ai',
+        start_url: '/',
+        background_color: '#000',
+        theme_color: '#000',
+        display: 'standalone',
+        icon: 'src/images/favicon.png'
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-offline`
   ]
 }

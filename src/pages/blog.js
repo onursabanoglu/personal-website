@@ -2,9 +2,10 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from '../components/layout'
-import Head from '../components/head'
+import SEO from "../components/seo"
 
 import BlogStyles from './blog.module.css'
+
 
 
 const Blog = () => {
@@ -33,7 +34,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <Head title="Blog" />
+      <SEO title="Blog" />
       <div className={BlogStyles.blogPostWrapper}>
         <h1 className={BlogStyles.blogTitle}>Blog</h1>
         {data.allMarkdownRemark.edges.map((edge) => {
