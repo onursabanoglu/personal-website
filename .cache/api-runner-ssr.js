@@ -1,5 +1,11 @@
 var plugins = [{
+      plugin: require('/Users/onursabanoglu/projects/personal-website/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      options: {"plugins":[],"name":"Onur Şabanoğlu","short_name":"Ai","start_url":"/","background_color":"#000","theme_color":"#000","display":"standalone","icon":"src/images/favicon.png","cache_busting_mode":"query","include_favicon":true,"legacy":true,"theme_color_in_head":true,"cacheDigest":"ceb1cac1d28a42710806494e37ec5890"},
+    },{
       plugin: require('/Users/onursabanoglu/projects/personal-website/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('/Users/onursabanoglu/projects/personal-website/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
