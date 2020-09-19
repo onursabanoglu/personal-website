@@ -7,6 +7,7 @@
   "dependencies": {
     "gatsby": "^2.24.56",
     "gatsby-image": "^2.4.17",
+    "gatsby-plugin-google-analytics": "^2.3.14",
     "gatsby-plugin-manifest": "^2.4.28",
     "gatsby-plugin-offline": "^3.2.27",
     "gatsby-plugin-postcss": "^2.3.11",
@@ -43,6 +44,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "delete": "rm -rf .cache",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
