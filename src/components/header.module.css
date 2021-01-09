@@ -1,33 +1,18 @@
 .header {
+  display: block;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--space-24);
-  padding-bottom: var(--space-24);
-  background-color: transparent;
-}
+  padding-top: var(--space-56);
 
-.logo {
-  color: var(--c-black);
-  display: inline-block;
-}
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
 
-.logo-title {
-  color: inherit;
-  font-size: calc( var(--f-default) * 1.5);
-  line-height: 1.2;
-}
-
-@media (--tablet-vw) {
-  .logo-title {
-    font-size: calc( var(--f-default) + 1.5vw);
-  }
-}
-
-@media (--desktop-vw) {
-  .logo-title {
-    font-size: calc( var(--f-default) + 1.75vw);
+    .name {
+      color: var(--c-gray-90);
+      margin-left: var(--space-12);
+      font-size: calc(var(--f-size-default) * 2);
+    }
   }
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import NavbarStyles from './navigation.module.css'
 
 const Navbar = (props) => {

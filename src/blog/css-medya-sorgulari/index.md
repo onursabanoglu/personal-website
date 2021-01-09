@@ -143,11 +143,11 @@ Ortam sorgularını eklemeden önce esnek bir düzen oluşturulabilir. Ardından
 
 Aşağıdaki Örneği inceleyelim;
 
-Mobil Görünüm:
+**Mobil Görünüm:**
 
 ![MobileView](./MobileView.jpg)
 
-Masaüstü Görünüm:
+**Masaüstü Görünüm:**
 
 ![DesktopView](./DesktopView.png)
 
@@ -167,9 +167,8 @@ Bu sorunu düzeltmek için yukarıdaki gibi bir görüntü alanı meta etiketi, 
 Medya sorguları ile, çeşitli cihazlar ve alanlar için esnek düzenler oluşturabilir, ve bu cihazlara uygun stil özellikleri tanımlayabilirsiniz.
 
 <br>
-<br>
 
-#### Kaynaklar;
+##### Kaynaklar;
 
 * https://fatihhayrioglu.com/css-3-medya-sorgulari/
 * https://www.sitepoint.com/premium/books/css-master-2nd-edition/read/8

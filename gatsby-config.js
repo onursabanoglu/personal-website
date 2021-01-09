@@ -59,8 +59,14 @@ module.exports = {
         icon: 'src/images/favicon.png'
       }
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+          shortname: `onursabanoglu-com`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ]
 }
