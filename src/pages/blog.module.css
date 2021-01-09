@@ -1,66 +1,48 @@
 .blog-post-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--space-128);
 
-  .blog-title {
-    display: inline-block;
-    font-size: calc( var(--f-default) * 3 );
-    line-height: 1;
-    margin-bottom: var(--space-48);
-    padding-left: var(--space-4);
-    background-repeat: no-repeat;
-    background-position: left -32px bottom 4px;
-    background-size: var(--space-64) var(--space-12);
-    background-image: linear-gradient(45deg,var(--c-razz),var(--c-razz));
-  }
+  .post-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--c-gray-20);
+    padding-top:  var(--space-32);
+    padding-bottom:  var(--space-32);
 
-  .blog-post {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
-    border-top: 1px solid var(--c-gray-30);
-  }
+    &:first-child {
+      padding-top: 0;
+    }
 
-  .blog-post:last-child {
-    border-bottom: 1px solid var(--c-gray-30);
-  }
-
-  .blog-post-title {
-    color: var(--c-gray-90);
-    margin-bottom: var(--space-8);
-   
-    a {
+    .post-title {
+      font-size: calc(var(--f-size-default) * 1.25);
       font-weight: var(--f-weight-semibold);
-      color: inherit;
-      font-size: calc( var(--f-default) * 1.5 );
-      background-repeat: no-repeat;
-      background-position: left bottom;
-      background-size: 0% 35%;
-      background-image: linear-gradient(45deg,var(--c-gray-30),var(--c-gray-30));
-      z-index: 2;
-      transition: all .6s cubic-bezier(.165,.84,.44,1);
+      margin-bottom: var(--space-4);
+
+      a {
+        color: var(--c-gray-90);
+
+        &:matches(:hover, :focus) {
+          background: var(--c-gradient-horizontal);
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      }
     }
 
-    a:matches(:hover, :focus) {
-      color: var(--c-razz);
-      background-size: 100% 35%;
+    .post-summary {
+      color: var(--c-gray-60);
     }
-  }
 
-  .post-summary {
-    color: var(--c-gray-60);
-    margin-bottom: var(--space-20);
-    font-size: calc( var(--f-default) * 1.125 );
-    font-weight: var(--f-weight-medium);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-  }
+    .post-meta {
+      margin-top: var(--space-16);
+      color: var(--c-gray-50);
 
-  .post-meta {
-    font-size: var(--f-default);
-    font-weight: var(--f-weight-medium);
-    color: var(--c-gray-50);
+      .meta-item {
+        font-size: calc(var(--f-size-default) / 1.125);
+        
+      }
+    }
+
   }
 }

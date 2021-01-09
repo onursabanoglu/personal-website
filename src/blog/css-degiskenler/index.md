@@ -10,7 +10,7 @@ Bir proje üzerinde çalışırken birçok öge için aynı değerleri (metin re
 Değişkenler, renkleri, yazı tiplerini ve boşluk değerleri gibi CSS özelliklerini tek bir noktadan yönetmeyi ve bir kod tabanı genelinde tutarlılık sağlamayı kolaylaştırır. Değişkenleri kullanarak bir özelliğe bir değer atayabilir ve bunu CSS kodumuzda ihtiyaç olunan yerlerde yeniden kullanabiliriz.
 
 
-#### Bu bölümde CSS değişkenlerinin şu özelliklerine değinmeye çalışacağım;
+##### Bu bölümde CSS değişkenlerinin şu özelliklerine değinmeye çalışacağım;
 * CSS’te değişkenler nasıl tanımlanır ve bu değişkenler için varsayılan değerler nasıl ayarlanır?
 * Tanımladığımız değişkenleri projemizde nasıl kullanabiliriz?
 * Değişkenlerde dinamik yapı nedir ve medya sorguları ile nasıl çalışır?

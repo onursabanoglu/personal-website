@@ -8,6 +8,7 @@ import BlogStyles from './blog.module.css'
 
 
 
+
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -35,12 +36,12 @@ const Blog = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <div className={BlogStyles.blogPostWrapper}>
-        <h1 className={BlogStyles.blogTitle}>Blog</h1>
+      <aside><h1 class="page-title">Blog</h1></aside>
+      <section className={BlogStyles.blogPostWrapper}>
         {data.allMarkdownRemark.edges.map((edge) => {
           return (
-            <div className={BlogStyles.blogPost}>
-                <h3 className={BlogStyles.blogPostTitle}>
+            <div className={BlogStyles.postItem}>
+                <h3 className={BlogStyles.postTitle}>
                   <Link  to={`${edge.node.fields.slug}`}>
                     {edge.node.frontmatter.title}
                   </Link>
@@ -49,14 +50,14 @@ const Blog = () => {
                   {edge.node.frontmatter.description}
                 </div>
                 <div className={BlogStyles.postMeta}>
-                  <span>{edge.node.frontmatter.date}</span>
-                  &nbsp; | &nbsp;
-                  <span>{edge.node.fields.readingTime.text}</span>
+                  <span className={BlogStyles.metaItem}>{edge.node.frontmatter.date}</span>
+                  &nbsp; • &nbsp;
+                  <span className={BlogStyles.metaItem}>{edge.node.fields.readingTime.text}</span>
                 </div>
             </div>
           )
         })}
-      </div>
+      </section>
     </Layout>
   )
 }
