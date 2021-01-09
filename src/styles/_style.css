@@ -99,8 +99,16 @@ code[class*="language-"], pre[class*="language-"] {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  padding: var(--space-32);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
   width: 100%;
+
+  @media (--tablet-vw) {
+    padding-left: var(--space-32);
+    padding-right: var(--space-32);
+  }
 
   h1 {
     font-size: calc( var(--f-size-default) * 2);
@@ -213,13 +221,10 @@ code[class*="language-"], pre[class*="language-"] {
 
     p {
       font-family: var(--f-family-s);
-      font-size: calc( var(--f-size-default) / 1.125 );
+      font-size: var(--f-size-default);
       line-height: 1.75;
       margin-bottom: var(--space-28);
 
-      @media (--tablet-vw) {
-        font-size: var(--f-size-default);
-      }
     }
 
     a {
