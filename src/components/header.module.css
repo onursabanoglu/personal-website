@@ -7,12 +7,28 @@
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
-
-    .name {
-      color: var(--c-gray-90);
+    
+    .title {
       margin-left: var(--space-12);
-      font-size: calc(var(--f-size-default) * 2);
+
+      .name {
+        color: var(--c-gray-90);
+        font-size: calc(var(--f-size-default) * 1.5);
+        font-weight: var(--f-weight-semibold);
+        line-height: 1.125;
+
+        @media (--tablet-vw) {
+          font-size: calc(var(--f-size-default) * 1.75);
+        }
+      }
+
+      .job {
+        color: var(--c-gray-50);
+        font-size: var(--f-size-default);
+      }
     }
+
+    
   }
 }
 

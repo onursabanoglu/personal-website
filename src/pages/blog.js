@@ -36,7 +36,7 @@ const Blog = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <aside><h1 class="page-title">Blog</h1></aside>
+      <aside><h2 class="page-title">Blog</h2></aside>
       <section className={BlogStyles.blogPostWrapper}>
         {data.allMarkdownRemark.edges.map((edge) => {
           return (
