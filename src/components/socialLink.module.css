@@ -1,22 +1,24 @@
 .social-wrap {
   display: flex;
-  align-items:center;
   flex-wrap: wrap;
-  padding-top: var(--space-64);
-  padding-bottom: var(--space-64);
-  margin-top: auto;
-  margin-bottom: var(--space-64);
+  gap: var(--space-16);
+  align-items:center;
+
 
   .social-link {
-    display: inline-block;
-    padding: var(--space-4) var(--space-12);
-    color: var(--c-gray-50);
-    font-size: calc( var(--f-default) * 1.25 );
-    font-weight: var(--f-weight-medium);
-    transition: all 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--space-4);
+    fill: var(--c-gray-70);
+    padding: var(--space-4);
+  
+    > svg {
+      fill: inherit;
+    }
   }
 
   .social-link:matches(:hover, :focus) {
-    color: var(--c-gray-70);
+    background-color: var(--c-gray-10);
   }
 }

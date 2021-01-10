@@ -49,6 +49,7 @@ a {
   -webkit-background-clip: text;
   color: transparent;
   margin-bottom: var(--space-16);
+  word-break: break-word;
 
   @media (--tablet-vw) {
     font-size: calc( var(--f-size-default) * 2);
@@ -99,8 +100,8 @@ code[class*="language-"], pre[class*="language-"] {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: var(--space-12);
+  padding-right: var(--space-12);
   padding-top: var(--space-32);
   padding-bottom: var(--space-32);
   width: 100%;
@@ -228,7 +229,7 @@ code[class*="language-"], pre[class*="language-"] {
     }
 
     a {
-      color: var(--c-gray-80);
+      color: var(--c-darkblue);
       font-weight: var(--f-weight-semibold);
       
       &:matches(:hover) {
@@ -244,7 +245,7 @@ code[class*="language-"], pre[class*="language-"] {
         font-family: var(--f-family-s);
 
         a {
-          color: var(--c-gray-50);
+          color: var(--c-darkblue);
           font-size: calc( var(--f-size-default) / 1.125);
         }
 
