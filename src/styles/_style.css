@@ -31,6 +31,28 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin-bottom: var(--space-12);
+  font-size: calc(var(--f-size-default) * 1.125);
+}
+
+.home {
+  padding-left: 0;
+
+  @media (--tablet-vw) {
+    padding-left: var(--space-32);
+  }
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+
+    &:matches(:hover) {
+      color: var(--c-darkblue);
+    }
+  }
+}
+
 ::selection {
   color: var(--c-white);
   background-color: var(--c-darkblue);
@@ -55,6 +77,17 @@ a {
     font-size: calc( var(--f-size-default) * 2);
   }
 
+}
+
+.social-group {
+  margin-top: var(--space-48);
+  margin-bottom: var(--space-32);
+
+  .social-title {
+    font-size: var(--f-size-default);
+    font-weight: var(--f-weight-normal);
+    margin-bottom: var(--space-12);
+  }
 }
 
 .avatar {
@@ -88,11 +121,6 @@ code[class*="language-"], pre[class*="language-"] {
   font-weight: var(--f-weight-medium);
   padding: var(--space-4);
 }
-
-
-
-
-
 
 .post-wrapper {
   grid-area: none;
