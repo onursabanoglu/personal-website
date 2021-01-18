@@ -9,6 +9,9 @@ import Instagram from './Instagram';
 import Linkedin from './Linkedin';
 import Medium from './Medium';
 import Twitter from './Twitter';
+import Vsco from './Vsco';
+import Letterboxd from './Letterboxd';
+import Goodreads from './Goodreads';
 
 
 const Icon = props => {
@@ -31,6 +34,12 @@ const Icon = props => {
       return <Medium {...props} />;
     case "Twitter":
       return <Twitter {...props} />;
+    case "Vsco":
+      return <Vsco {...props} />;
+    case "Letterboxd":
+      return <Letterboxd {...props} />;
+    case "Goodreads":
+      return <Goodreads {...props} />;
     default:
       return <div />;
   }
