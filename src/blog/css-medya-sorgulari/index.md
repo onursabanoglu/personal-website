@@ -8,6 +8,8 @@ CSS’te bazı durumlarda, bir koşula bağlı olarak stil yazma ihtiyacımız o
 
 Son yıllarda özellikle mobil cihazların çeşitliğinin ve kullanımının artmasıyla birlikte, her cihaza uygun web siteleri yapmak bir zorunluluk haline geldi. Bu noktada devreye en sık kullanılan koşul ifadesi medya sorguları girer. Medya sorguları farklı cihazlar ve çözünürlükler için stil tanımlamaları yapmamıza olanak sağlayan bir CSS özelliğidir.
 
+Son yıllarda özellikle mobil cihazların çeşitliğinin ve kullanımının artmasıyla birlikte, her cihaza uygun web siteleri yapmak bir zorunluluk haline geldi. Bu noktada devreye en sık kullanılan koşul ifadesi medya sorguları girer. Medya sorguları farklı cihazlar ve çözünürlükler için stil tanımlamaları yapmamıza olanak sağlayan bir CSS özelliğidir.
+
 
 
 ## Medya Sorguları ve media
