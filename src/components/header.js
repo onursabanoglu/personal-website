@@ -7,12 +7,9 @@ import Navbar from './navigation'
 const Header = () => {
   return (
     <header className={headerStyles.header}>
-      <Link className={headerStyles.logo} to="/">
-        <span class="avatar"></span>
-        <div className={headerStyles.title}>
-          <h1 class={headerStyles.name}>Onur Şabanoğlu</h1>
-          <span className={headerStyles.job}>Programmer of boxes</span>
-        </div>
+      <Link to="/">
+        <h1 class={headerStyles.title}>Onur Şabanoğlu</h1>
+        <span className={headerStyles.job}>boxes designer and developer</span>
       </Link>
       <Navbar />
     </header>

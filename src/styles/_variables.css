@@ -1,37 +1,34 @@
 :root {
-
   --c-black: rgba(0, 0, 0, 1);
   --c-white: rgba(255, 255, 255, 1);
 
-  --c-gray-05: rgba(249, 250, 251, 1);
-  --c-gray-10: rgba(243, 244, 246, 1);
-  --c-gray-20: rgba(229, 231, 235, 1);
-  --c-gray-30: rgba(209, 213, 219, 1);
-  --c-gray-40: rgba(156, 163, 175, 1);
-  --c-gray-50: rgba(107, 114, 128, 1);
-  --c-gray-60: rgba(75, 85, 99, 1);
-  --c-gray-70: rgba(55, 65, 81, 1);
-  --c-gray-80: rgba(31, 41, 55, 1);
-  --c-gray-90: rgba(17, 24, 39, 1);
+  --c-gray-05: hsla(200, 23%, 97%, 1);
+  --c-gray-10: hsla(206, 16%, 91%, 1);
+  --c-gray-20: hsla(213, 15%, 85%, 1);
+  --c-gray-30: hsla(214, 18%, 74%, 1);
+  --c-gray-40: hsla(214, 18%, 64%, 1);
+  --c-gray-50: hsla(216, 17%, 55%, 1);
+  --c-gray-60: hsla(218, 20%, 39%, 1);
+  --c-gray-70: hsla(219, 30%, 29%, 1);
+  --c-gray-80: hsla(220, 39%, 21%, 1);
+  --c-gray-90: hsla(219, 46%, 13%, 1);
+  --c-gray-100: hsla(219, 52%, 6%, 1);
 
-  --c-darkblue: rgb(0, 0, 138);
-  --c-darkorchid: rgba(153, 50, 204, 1);
-  --c-pizazz: rgba(255, 138, 0, 1);
+  --c-darkblue: hsla(240, 100%, 27%, 1);
+  --c-darkorchid: hsla(280, 61%, 50%, 1);
 
   --c-gradient-horizontal: linear-gradient(90deg, var(--c-darkblue) 0%, var(--c-darkorchid) 100%);
-  --c-gradient-vertical: linear-gradient(180deg, var(--c-darkblue) 0%, var(--c-darkorchid) 100%);
-
 
   --f-family-s: 'Merriweather', serif;
-  --f-family-ss: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  --f-family-ss: 'Inter', sans-serif;
   --f-family-ms: 'JetBrains Mono', monospace;
 
-  --f-size-default: 18px;
+  --f-size-default: 16px;
 
   --f-weight-normal: 400;
   --f-weight-medium: 500;
   --f-weight-semibold: 600;
-  --f-weight-bold: 700;
+
 
   --space-unit: 16px;
   --space-4: calc( var(--space-unit ) * 25 / 100 );
@@ -46,7 +43,4 @@
   --space-48: calc( var(--space-unit ) * 300 / 100 );
   --space-56: calc( var(--space-unit ) * 350 / 100 );
   --space-64: calc( var(--space-unit ) * 400 / 100 );
-  --space-80: calc( var(--space-unit ) * 500 / 100 );
-  --space-96: calc( var(--space-unit ) * 600 / 100 );
-  --space-128: calc( var(--space-unit ) * 800 / 100 );
 }

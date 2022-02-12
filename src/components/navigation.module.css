@@ -1,18 +1,16 @@
 .navigation {
   display: flex;
-  align-items: center;
-  width: 100%;
   flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
   border-bottom: 1px solid var(--c-gray-20);
-  margin-top: var(--space-40);
-  
+  padding-top: var(--space-32);
 
   .nav-link {
-    font-size: var(--f-default-size);
-    font-weight: var(--f-weight-semibold);
+    font-size: calc(var(--f-size-default) * 1.125);
+    font-weight: var(--f-weight-medium);
     padding-bottom: var(--space-20);
-    margin-right: var(--space-20);
-    color: var(--c-gray-80);
+    color: var(--c-gray-90);
     margin-bottom: -1px;
 
     &.active {
@@ -20,7 +18,7 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      border-bottom: 2px solid var(--c-darkorchid);
+      border-bottom: 1px solid var(--c-darkorchid);
     }
   }
 }

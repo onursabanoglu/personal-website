@@ -1,34 +1,22 @@
 .header {
   display: block;
   width: 100%;
-  padding-top: var(--space-56);
+  padding-top: var(--space-48);
 
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    
-    .title {
-      margin-left: var(--space-12);
+  a {
+    display: inline-block;
+    cursor: pointer;
+  }
 
-      .name {
-        color: var(--c-gray-90);
-        font-size: calc(var(--f-size-default) * 1.5);
-        font-weight: var(--f-weight-semibold);
-        line-height: 1.125;
+  .title {
+    font-size: calc(var(--f-size-default) * 2);
+    color: var(--c-gray-90);
+    letter-spacing: -0.75px;
+  }
 
-        @media (--tablet-vw) {
-          font-size: calc(var(--f-size-default) * 1.75);
-        }
-      }
-
-      .job {
-        color: var(--c-gray-50);
-        font-size: var(--f-size-default);
-      }
-    }
-
-    
+  .job {
+    font-size: var(--f-size-default);
+    color: var(--c-gray-50);
   }
 }
 

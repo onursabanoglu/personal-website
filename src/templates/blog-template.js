@@ -45,12 +45,9 @@ export default function BlogPost({ data }) {
         <div className="post-header">
           <h1 className="post-title">{post.frontmatter.title}</h1>
           <div className="post-meta">
-            <span className="avatar"></span>
-            <div className="meta-group">
-              <span className="meta-item">{post.frontmatter.date}</span>
-              <span class="meta-item">/</span>
-              <span className="meta-item">{post.fields.readingTime.text}</span>
-            </div>
+            <span>{post.frontmatter.date}</span>
+            <span> • </span>
+            <span>{post.fields.readingTime.text}</span>
           </div>
         </div>
         <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />

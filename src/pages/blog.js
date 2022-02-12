@@ -36,23 +36,20 @@ const Blog = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <aside><h2 class="page-title">Blog</h2></aside>
       <section className={BlogStyles.blogPostWrapper}>
         {data.allMarkdownRemark.edges.map((edge) => {
           return (
             <div className={BlogStyles.postItem}>
-                <h3 className={BlogStyles.postTitle}>
-                  <Link  to={`${edge.node.fields.slug}`}>
+                <h4 className={BlogStyles.postTitle}>
+                  <Link to={`${edge.node.fields.slug}`}>
                     {edge.node.frontmatter.title}
                   </Link>
-                </h3>
+                </h4>
                 <div className={BlogStyles.postSummary} >
                   {edge.node.frontmatter.description}
                 </div>
                 <div className={BlogStyles.postMeta}>
-                  <span className={BlogStyles.metaItem}>{edge.node.frontmatter.date}</span>
-                  &nbsp; • &nbsp;
-                  <span className={BlogStyles.metaItem}>{edge.node.fields.readingTime.text}</span>
+                  <span className={BlogStyles.metaItem}>{edge.node.frontmatter.date}</span> • <span className={BlogStyles.metaItem}>{edge.node.fields.readingTime.text}</span>
                 </div>
             </div>
           )
