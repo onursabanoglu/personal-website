@@ -169,12 +169,13 @@ code[class*="language-"], pre[class*="language-"] {
       margin-bottom: var(--space-24);
       font-family: var(--f-family-s);
       line-height: 1.7;
-      color: var(--c-gray-90);
+      color: var(--c-gray-80);
     }
 
     h1, h2, h3, h4, h5 {
       line-height: 1.25;
       font-weight: var(--f-weight-semibold);
+      color: var(--c-gray-90);
     }
 
     a {
