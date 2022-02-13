@@ -97,10 +97,16 @@ h6 {
 
 
 .social-group {
-  padding-top: var(--space-64);
+  padding-top: var(--space-40);
 
   .social-title {
+    background: var(--c-gradient-horizontal);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     margin-bottom: var(--space-16);
+    font-size: calc(var(--f-size-default) * 1.125);
+    font-weight: 500
   }
 }
 

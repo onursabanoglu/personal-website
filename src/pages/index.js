@@ -17,9 +17,9 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <section className="main">
-        <p>Hello 👋 </p>
-        <p>I am Onur, I live in Istanbul Turkey. Currently, I'm working as a frontend developer at <a href="https://modaltrans.com/">modaltrans</a>.</p>
-        <p>Apart from software, my biggest hobby is watching movies. My favorite actresses are <a href="https://www.imdb.com/name/nm0001191/?ref_=nv_sr_srsg_0" target="_blank">Adam Sandler</a> , <a href="https://www.imdb.com/name/nm0136797/?ref_=nv_sr_srsg_0">Steve Carell</a>, and <a href="https://www.imdb.com/name/nm0005562/?ref_=nv_sr_srsg_0">Owen wilson</a>.</p>
+        <p>👋 Hi, I'm Onur </p>
+        <p>I'm a UI Developer, loves to design, CSS enthusiast, following frontend technologies closely and generally developing UI architectures, living in Istanbul, Turkey. I’m currently developing design system architecture at <a href="https://www.parasut.com/" target="_blank">Paraşüt</a>.</p>
+        <p>In my remaining time from software, I watch movies and TV shows(I'm a fan of <a href="https://www.imdb.com/name/nm0136797/" target="_blank">Steve Carell</a>), play games, play the ukulele and driving the skateboard.</p>
       </section>
       <footer className="social-group">
         <h4 className="social-title">Get in Touch:</h4>
