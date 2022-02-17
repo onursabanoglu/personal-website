@@ -835,10 +835,10 @@ Katkılarından dolayı <a href="https://twitter.com/fatihhayri" target="_blank"
 - [https://fatihhayrioglu.com/css-grid-giris/](https://fatihhayrioglu.com/css-grid-giris/)
 - [https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 - [https://gridbyexample.com/](https://gridbyexample.com/)
-- [https://tympanus.net/codrops/css_reference/grid/#section_grid-alignment](https://tympanus.net/codrops/css_reference/grid/#section_grid-alignment)
+- [https://tympanus.net/codrops/css_reference/grid/](https://tympanus.net/codrops/css_reference/grid)
 - [https://www.quackit.com/css/grid/tutorial/](https://www.quackit.com/css/grid/tutorial/)
-- [https://css-tricks.com/snippets/css/complete-guide-grid/#prop-justify-self](https://css-tricks.com/snippets/css/complete-guide-grid/#prop-justify-self)
-- [https://www.codeinwp.com/blog/css-grid-tutorial-layout/?utm_source=CSS-Weekly&utm_campaign=Issue-449&utm_medium=email#why-use-grid-layout](https://www.codeinwp.com/blog/css-grid-tutorial-layout/?utm_source=CSS-Weekly&utm_campaign=Issue-449&utm_medium=email#why-use-grid-layout)
+- [https://css-tricks.com/snippets/css/complete-guide-grid](https://css-tricks.com/snippets/css/complete-guide-grid)
+- [https://www.codeinwp.com/blog/css-grid-tutorial-layout](https://www.codeinwp.com/blog/css-grid-tutorial-layout)
 - [https://ishadeed.com/article/css-grid-minmax/](https://ishadeed.com/article/css-grid-minmax/)
 
 
