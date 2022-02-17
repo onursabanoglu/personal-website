@@ -267,11 +267,7 @@ Aralarındaki farkı daha iyi anlamak için aşağıdaki örneğe bakalım.
 
 Belirli bir görüntü alanı genişliğine kadar, her iki değer de aynı sonucu verir. Görüntü alanı genişliği değiştiği durumda fark ortaya çıkar.
 
-<figure>
-  <video controls>
-    <source src="./assets/auto-fit-fill.mp4" type="video/mp4">
-  </video>
-</figure>
+https://user-images.githubusercontent.com/47773417/154422024-d21613ae-708b-4dab-884f-93fe5c3e92ec.mp4
 
 
 ### Izgara öğelerini aralama <a name="grid-gap"></a>
@@ -286,6 +282,8 @@ Belirli bir görüntü alanı genişliğine kadar, her iki değer de aynı sonuc
   row-gap: 32px;
 }
 ```
+
+
 
 ![grid-gap](./assets/gap.png)
 
@@ -811,11 +809,8 @@ Düzen paneli, bir sayfaya ızgaralar eklendiğinde, bu ızgaraları görüntül
 - Kılavuz çizgilerini genişletebilme,
 - Izgaranızın mini görünümünü görüntüleme, gibi bazı düzenlemeleri yapabiliriz.
 
-<figure>
-  <video controls>
-    <source src="./assets/devtools.mp4" type="video/mp4">
-  </video>
-</figure>
+https://user-images.githubusercontent.com/47773417/154422142-a66d2fb2-2c3d-4ddb-a07d-0f26ce7e024b.mp4
+
 
 
 ## Tarayıcı Desteği <a name="grid-support"></a>
