@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Onur Sabanoglu`,
     titleTemplate: "%s · The Real Hero",
-    description: `Programmer of boxes`,
+    description: `boxes designer and developer`,
     url: 'https://onursabanoglu.com/',
     author: "Onur Şabanoğlu",
   },
