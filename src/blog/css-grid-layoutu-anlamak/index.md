@@ -267,8 +267,12 @@ Aralarındaki farkı daha iyi anlamak için aşağıdaki örneğe bakalım.
 
 Belirli bir görüntü alanı genişliğine kadar, her iki değer de aynı sonucu verir. Görüntü alanı genişliği değiştiği durumda fark ortaya çıkar.
 
-https://user-images.githubusercontent.com/47773417/154422024-d21613ae-708b-4dab-884f-93fe5c3e92ec.mp4
 
+<figure >
+  <video controls="true" allowfullscreen="true">
+    <source src="https://user-images.githubusercontent.com/47773417/154422024-d21613ae-708b-4dab-884f-93fe5c3e92ec.mp4" type="video/mp4">
+  </video>
+</figure>
 
 ### Izgara öğelerini aralama <a name="grid-gap"></a>
 `column-gap` ve `row-gap` özellikleri bir ızgara düzeninde, satırlar veya sütunlar arasındaki boşluğu ayarlamak için kullanılır.
@@ -809,7 +813,11 @@ Düzen paneli, bir sayfaya ızgaralar eklendiğinde, bu ızgaraları görüntül
 - Kılavuz çizgilerini genişletebilme,
 - Izgaranızın mini görünümünü görüntüleme, gibi bazı düzenlemeleri yapabiliriz.
 
-https://user-images.githubusercontent.com/47773417/154422142-a66d2fb2-2c3d-4ddb-a07d-0f26ce7e024b.mp4
+<figure >
+  <video controls="true" allowfullscreen="true">
+    <source src="https://user-images.githubusercontent.com/47773417/154422142-a66d2fb2-2c3d-4ddb-a07d-0f26ce7e024b.mp4" type="video/mp4">
+  </video>
+</figure>
 
 
 
