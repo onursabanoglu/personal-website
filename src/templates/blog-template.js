@@ -1,11 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Disqus } from 'gatsby-plugin-disqus'
-
-
-
-
+import { Disqus } from "gatsby-plugin-disqus"
 
 export const query = graphql`
   query($slug: String!) {
@@ -27,16 +23,10 @@ export const query = graphql`
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
 
- 
-
-
   let disqusConfig = {
-    
     identifier: post.id,
     title: post.title,
   }
-
-
 
   return (
     <Layout>
@@ -50,8 +40,13 @@ export default function BlogPost({ data }) {
             <span>{post.fields.readingTime.text}</span>
           </div>
         </div>
-        <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="post-comment"><Disqus config={disqusConfig} /></div>
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <div className="post-comment">
+          <Disqus config={disqusConfig} />
+        </div>
       </div>
     </Layout>
   )

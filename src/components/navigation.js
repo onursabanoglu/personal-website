@@ -1,15 +1,26 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import NavbarStyles from './navigation.module.css'
+import React from "react"
+import { Link } from "gatsby"
+import NavbarStyles from "./navigation.module.css"
 
-const Navbar = (props) => {
+const Navbar = props => {
   return (
     <nav className={NavbarStyles.navigation}>
-      <Link className={NavbarStyles.navLink} activeClassName={NavbarStyles.active} to="/">Home</Link>
-      <Link className={NavbarStyles.navLink} activeClassName={NavbarStyles.active} to="/blog">Articles</Link>
-    </nav> 
+      <Link
+        className={NavbarStyles.navLink}
+        activeClassName={NavbarStyles.active}
+        to="/"
+      >
+        Home
+      </Link>
+      <Link
+        className={NavbarStyles.navLink}
+        activeClassName={NavbarStyles.active}
+        to="/blog"
+      >
+        Articles
+      </Link>
+    </nav>
   )
 }
 
 export default Navbar
-

@@ -1,38 +1,37 @@
-import React from 'react';
+import React from "react"
 
-import Dribbble from './Dribbble';
-import Github from './Github';
-import Instagram from './Instagram';
-import Linkedin from './Linkedin';
-import Medium from './Medium';
-import Twitter from './Twitter';
-import Xbox from './Xbox';
-import Letterboxd from './Letterboxd';
-import Goodreads from './Goodreads';
-
+import Dribbble from "./Dribbble"
+import Github from "./Github"
+import Instagram from "./Instagram"
+import Linkedin from "./Linkedin"
+import Medium from "./Medium"
+import Twitter from "./Twitter"
+import Xbox from "./Xbox"
+import Letterboxd from "./Letterboxd"
+import Goodreads from "./Goodreads"
 
 const Icon = props => {
-  switch(props.name) {
+  switch (props.name) {
     case "Dribbble":
-      return <Dribbble {...props} />;
+      return <Dribbble {...props} />
     case "Github":
-      return <Github {...props} />;
+      return <Github {...props} />
     case "Instagram":
-      return <Instagram {...props} />;
+      return <Instagram {...props} />
     case "Linkedin":
-      return <Linkedin {...props} />;
+      return <Linkedin {...props} />
     case "Medium":
-      return <Medium {...props} />;
+      return <Medium {...props} />
     case "Twitter":
-      return <Twitter {...props} />;
+      return <Twitter {...props} />
     case "Xbox":
-      return <Xbox {...props} />;
+      return <Xbox {...props} />
     case "Letterboxd":
-      return <Letterboxd {...props} />;
+      return <Letterboxd {...props} />
     case "Goodreads":
-      return <Goodreads {...props} />;
+      return <Goodreads {...props} />
     default:
-      return <div />;
+      return <div />
   }
 }
-export default Icon;
+export default Icon

@@ -8,7 +8,7 @@ Emmet, Html ve CSS iş akışını büyük ölçüde geliştiren,biz web gelişt
 
 **Neden Kullanmalıyız?**
 
-*Emmet’in temel mantığı, yazılımcıya kodlama yaparken zaman kazandırmasıdır. Bu yüzden çoğu yazılımcı text editöründe Emmet eklentisini kullanır. bir örnekle açıklayacak olursak örneğin;
+\*Emmet’in temel mantığı, yazılımcıya kodlama yaparken zaman kazandırmasıdır. Bu yüzden çoğu yazılımcı text editöründe Emmet eklentisini kullanır. bir örnekle açıklayacak olursak örneğin;
 
 ```html
 <div>
@@ -21,17 +21,18 @@ Emmet, Html ve CSS iş akışını büyük ölçüde geliştiren,biz web gelişt
   </ul>
 </div>
 ```
+
 şeklindeki iç içe girmiş bir kod yapımız olsun, bu kodu tek tek iç içe yazmak yerine;
-**div>ul>li*5>a** şeklinde yazarak ekrandaki kod yapısını elde etmiş oluruz.
+**div>ul>li\*5>a** şeklinde yazarak ekrandaki kod yapısını elde etmiş oluruz.
 
 Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken sadece [emmet.io](https://emmet.io/) adresine gidip burada Download sekmesine gittikten sonra ekranda bulunan text editörlerinden size uygun olanı seçip,indirmek. Bu kısaltmalarınızın editörünüzde çalışması için, kısaltılmış kodları yazdıktan sonra editörün tamamlaması için klavyenizden TAB tuşuna basmalısınız.
-
 
 şimdi bu kısaltmalarda kullanılan bazı simgelerin ne işe yaradığını ele alacağız.
 
 ## Yerleştirme Operatörleri
 
-**Child (>)** : Elemente alt elemanlar eklemek için kullanılır. **div>ul>li*5>a** şeklinde kullanılır.
+**Child (>)** : Elemente alt elemanlar eklemek için kullanılır. **div>ul>li\*5>a** şeklinde kullanılır.
+
 ```html
 <div>
   <ul>
@@ -44,9 +45,8 @@ Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken 
 </div>
 ```
 
-
-
 **Sibling (+)** : Elementin yanına elamanlar ekler. **body>div+div+div** şeklinde kullanılır.
+
 ```html
 <body>
   <ul>
@@ -57,8 +57,8 @@ Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken 
 </body>
 ```
 
+**Multiplication (\*)** : Elementin kaç defa üretileceğini belirtir. **div>ul>li\*5** şeklinde kullanılır.
 
-**Multiplication (*)** : Elementin kaç defa üretileceğini belirtir. **div>ul>li*5** şeklinde kullanılır.
 ```html
 <div>
   <ul>
@@ -72,6 +72,7 @@ Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken 
 ```
 
 **Class (.)** : karakteri ile oluşturmak istediğiniz elemente class özelliği eklenmiş olur ve girmiş olduğunuz değer atamasıda class özelliğine atanmış olur. **div.navigation>ul>li.nav-item** şeklinde kullanılır.
+
 ```html
 <div class="navigation">
   <ul>
@@ -80,8 +81,8 @@ Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken 
 </div>
 ```
 
-
 **ID (#)** : Karakteri ile oluşturmak istediğiniz elemente id özelliği eklenmiş olur ve girmiş olduğunuz değer atamasıda id özelliğine atanmış olur. **div#navigation>ul>li#nav-item** şeklinde kullanılır.
+
 ```html
 <div id="navigation">
   <ul>
@@ -90,7 +91,8 @@ Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken 
 </div>
 ```
 
-**Item numbering ($)** : İşareti ile sayısal olarak otomatik artan değer üretimi sağlar. **ul>li.item$*5** şeklinde kullanılır.
+**Item numbering (\$)** : İşareti ile sayısal olarak otomatik artan değer üretimi sağlar. **ul>li.item\$\*5** şeklinde kullanılır.
+
 ```html
 <ul>
   <li class="item1"></li>
@@ -102,10 +104,10 @@ Emmet birçok Text Editörü ile uyumlu şekilde çalışır. Yapmanız gereken 
 ```
 
 **Text ({})** : Belirttiğimiz elementin için metin eklememize yardımcı olur. **p{ Merhaba Dünya }** şeklinde kullanılır.
+
 ```html
 <p>Merhaba Dünya</p>
 ```
-
 
 ## Emmet ile HTML 5 İskeleti Oluşturmak
 
@@ -114,13 +116,11 @@ Bir HTML sayfası oluştururken bunun için yapmanız gereken ilk şey sayfa iç
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
 </html>
 ```

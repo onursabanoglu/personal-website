@@ -6,13 +6,12 @@ description: "CSS yazmak her zaman heyecan verici ve zevkli bir iştir, ancak k�
 
 CSS yazmak her zaman heyecan verici ve zevkli bir iştir, ancak küçük projeler büyüdükçe CSS ile baş etmek daha karmaşık hale geldiği için daha kolay yönetilebilir bir yapı ihtiyacını doğurdu. Bu soruna çözüm olarak CSS dosyalarını farklı klasörlerde dosyalayıp, **“@import”** yapısı kullanılması denendi, ancak bu yapı CSS’te dosyaların yüklenmesinde yavaşlığa neden olduğu için bir çözüme kavuşamadı. Bu ihtiyaçlara yanıt olarak ta CSS Derleyicileri ortaya çıktı. Böylelikle tek bir CSS dosyası içinde kaybolmaktansa daha sistematik bir şekilde çalışma sağlanmış oldu.
 
-
 Bir CSS derleyicisi kullanmanın avantajlarından biri performansı etkilemeden kodunuzu birkaç dosyaya bölme yeteneğine sahip olmasıdır. Sass’ın **“@import”** yapısı sayesinde istediğiniz gibi stil kodlarını klasörleyip, daha sonra bu klasör içindeki stilleri tek bir dizinde import edebilirsiniz.
 
-
-
 ## 7–1 Sass Mimarisi
+
 Sass projelerinizde klasörlerinizi yapılandırmanızı sağlayan bir modeldir. Mantığı temel olarak 7 Farklı sass klasörü ve bütün dosyaların toplandığı tek bir ana dosyadan oluşur. Böylelikle klasörlerdeki bütün dosyalar derlenmeyip sadece ana dizindeki dosya derlenmiş olur.
+
 ```
 sass/
 |
@@ -79,7 +78,6 @@ sass/
 
 Gördüğünüz gibi kök dizininde tek bir sass dosyası vardır main.scss, diğer tüm dosyalar uygun klasöre ayrılır.
 
-
 **Base:** Bu klasörde projeye ait demirbaş diyebileceğimiz kodlar bulunur. normalize.css, tipografi ile ilgili temel kodlar bulunur.
 
 **Components:** Components klasörü daha küçük bileşenlerin bulunduğu klasördür. Bu klasörde genellikle buttons.scss, dropdown.scss gibi bileşenler bulunur.
@@ -94,17 +92,14 @@ Gördüğünüz gibi kök dizininde tek bir sass dosyası vardır main.scss, di�
 
 **Vendors:** Harici kütüphanelerden gelen tüm stil dosyaların bu klasör adı altında toplanır.
 
-
-
 ### Son olarak,
 
-Bazı sass dosyalarının css’e derlenmesine gerek yoktur. Bu dosyalar diğer sass dosyalarına hizmet etmek için vardırlar. Örneğin “_variables.scss” bu dosyanın amacı, diğer sass dosyaları bu dosyadan bilgi kullanabilmesi için vardır.
+Bazı sass dosyalarının css’e derlenmesine gerek yoktur. Bu dosyalar diğer sass dosyalarına hizmet etmek için vardırlar. Örneğin “\_variables.scss” bu dosyanın amacı, diğer sass dosyaları bu dosyadan bilgi kullanabilmesi için vardır.
 
 <br>
 <br>
 
 #### Kaynaklar;
 
-* https://fatihhayrioglu.com/sass-klasor-yapisi/
-* https://www.sitepoint.com/architecture-sass-project/
-
+- https://fatihhayrioglu.com/sass-klasor-yapisi/
+- https://www.sitepoint.com/architecture-sass-project/

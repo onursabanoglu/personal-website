@@ -4,13 +4,11 @@ date: "2019-08-03"
 description: "İş dünyasında çoğu zaman bir takımda daha fazla insanın olması, daha fazla kaynak, daha fazla ürün ve daha fazla özellik olacağı yanılgısına kapılırız. Bu bakış açısı tamamen yanlıştır diyemeyiz, ancak az olanın iyi bir şey olduğunu unuturuz."
 ---
 
-
 İş dünyasında çoğu zaman bir takımda daha fazla insanın olması, daha fazla kaynak, daha fazla ürün ve daha fazla özellik olacağı yanılgısına kapılırız. Bu bakış açısı tamamen yanlıştır diyemeyiz, ancak az olanın iyi bir şey olduğunu unuturuz.
 
 Jeff Bezos’un Amazon’da çok önemli bir felsefesi vardır.
 
->“Eğer bir takım iki pizza ile beslenemiyorsa, o takım çok büyüktür.”
-
+> “Eğer bir takım iki pizza ile beslenemiyorsa, o takım çok büyüktür.”
 
 ## Ringlemann Etkisi (Sosyal Kaytarma)
 
@@ -24,11 +22,7 @@ Bir grup erkeğe halat çektirip her birinin harcadığı performansı ölçüyo
 
 Şunu izleyebilirsiniz: https://www.youtube.com/watch?v=ie86AKyBhPM
 
-
-
 Psikologlar bu durumu şöyle açıklarlar; Ortak çaba durumunda, bireysel sorumluluğun etkisi daha azdır, bu yüzden her şeyi verme motivasyonu eksik kalır, kişisel katkıları ayırt edilemez.
-
-
 
 ## Peki Neden Hala Ekipleri Büyütüyoruz?
 
@@ -37,4 +31,3 @@ Bir noktadan sonra özellikle şirketler belirli bir oranda finansal ve pazar ba
 “Bir soruna daha fazla insan atamak fabrika zihniyetidir, yani daha fazla insan birşey üzerinde çalışırsa, sonuçta daha fazla çıktı anlamına gelir.”
 
 Son olarak, bir soruna çok fazla insan ve kaynak ataması sonucunda fazla çalışılmış ancak az odaklı bir ürün elde edilir.
-
