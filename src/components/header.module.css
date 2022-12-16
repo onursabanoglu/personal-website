@@ -10,7 +10,8 @@
 
   .title {
     font-size: calc(var(--f-size-default) * 2);
-    color: var(--c-gray-90);
+    font-weight: var(--f-weight-medium);
+    color: var(--c-gray-70);
     letter-spacing: -0.75px;
   }
 

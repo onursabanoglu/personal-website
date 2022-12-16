@@ -17,7 +17,7 @@ const Navbar = props => {
         activeClassName={NavbarStyles.active}
         to="/blog"
       >
-        Articles
+        Blog
       </Link>
     </nav>
   )

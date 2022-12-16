@@ -5,19 +5,20 @@
   .post-item {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid var(--c-gray-20);
-    padding-top:  var(--space-28);
-    padding-bottom:  var(--space-28);
+    border-bottom: 1px solid var(--c-gray-10);
+    padding-top:  var(--space-20);
+    padding-bottom:  var(--space-20);
 
     &:first-child {
       padding-top: 0;
     }
 
     .post-title {
-      margin-bottom: var(--space-12);
+      margin-bottom: var(--space-8);
 
       a {
-        color: var(--c-gray-90);
+        color: var(--c-gray-70);
+        font-weight: var(--f-weight-medium);
 
         &:matches(:hover, :focus) {
           text-decoration: underline;
@@ -31,7 +32,7 @@
 
     .post-meta {
       margin-top: var(--space-12);
-      color: var(--c-gray-60);
+      color: var(--c-gray-50);
       font-size: calc(var(--f-size-default) / 1.125);
     }
   }

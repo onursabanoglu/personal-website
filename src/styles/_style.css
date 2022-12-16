@@ -21,7 +21,7 @@ body {
   font-size: var(--f-size-default);
   font-weight: var(--f-weight-normal);
   line-height: 1.5;
-  color: var(--c-gray-90);
+  color: var(--c-gray-70);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -77,10 +77,6 @@ video {
   width: 100%;
 }
 
-::selection {
-  color: var(--c-gray-20);
-  background-color: var(--c-darkblue);
-}
 
 ::marker {
   color: var(--c-gray-70);
@@ -98,6 +94,7 @@ video {
 
   p {
     font-size: calc(var(--f-size-default) * 1.25);
+    color: var(--c-gray-70);
   }
 }
 
@@ -106,13 +103,10 @@ video {
   padding-top: var(--space-40);
 
   .social-title {
-    background: var(--c-gradient-horizontal);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: var(--c-gray-70);
     margin-bottom: var(--space-16);
-    font-size: calc(var(--f-size-default) * 1.125);
-    font-weight: 500
+    font-size: var(--f-size-default);
+    font-weight: var(--f-weight-medium);
   }
 }
 
@@ -165,14 +159,14 @@ code[class*="language-"], pre[class*="language-"] {
     text-align: center;
 
     .post-title {
-      color: var(--c-gray-90);
+      color: var(--c-gray-70);
       letter-spacing: -1px;
       font-weight: var(--f-weight-medium);
     }
 
     .post-meta {
       margin-top: var(--space-4);
-      color: var(--c-gray-60);
+      color: var(--c-gray-50);
     }
   }
 
@@ -181,13 +175,13 @@ code[class*="language-"], pre[class*="language-"] {
       margin-bottom: var(--space-24);
       font-family: var(--f-family-s);
       line-height: 1.7;
-      color: var(--c-gray-80);
+      color: var(--c-gray-70);
     }
 
     h1, h2, h3, h4, h5 {
       line-height: 1.25;
       font-weight: var(--f-weight-semibold);
-      color: var(--c-gray-90);
+      color: var(--c-gray-70);
     }
 
     a {
@@ -211,22 +205,15 @@ code[class*="language-"], pre[class*="language-"] {
 
     blockquote {
       background-color: var(--c-gray-05);
-      border: 1px solid var(--c-gray-20);
+      border: 1px solid var(--c-gray-10);
       border-radius: var(--space-12);
       padding: var(--space-16);
       font-style: italic;
+      font-weight: var(--f-weight-semibold);
 
       p {
         margin-bottom: 0;
       }
     }
-  }
-
-  .post-comment {
-    background-color: var(--c-gray-05);
-    border: 1px solid var(--c-gray-20);
-    border-radius: var(--space-12);
-    padding: var(--space-16);
-    margin-top: var(--space-64);
   }
 }

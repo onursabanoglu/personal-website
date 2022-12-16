@@ -1,35 +1,31 @@
 :root {
-  --c-black: rgba(0, 0, 0, 1);
-  --c-white: rgba(255, 255, 255, 1);
-
-  --c-gray-05: hsla(200, 23%, 97%, 1);
-  --c-gray-10: hsla(206, 16%, 91%, 1);
-  --c-gray-20: hsla(213, 15%, 85%, 1);
-  --c-gray-30: hsla(214, 18%, 74%, 1);
-  --c-gray-40: hsla(214, 18%, 64%, 1);
-  --c-gray-50: hsla(216, 17%, 55%, 1);
-  --c-gray-60: hsla(218, 20%, 39%, 1);
-  --c-gray-70: hsla(219, 30%, 29%, 1);
-  --c-gray-80: hsla(220, 39%, 21%, 1);
-  --c-gray-90: hsla(219, 46%, 13%, 1);
-  --c-gray-100: hsla(219, 52%, 6%, 1);
-
-  --c-darkblue: hsla(240, 100%, 27%, 1);
-  --c-darkorchid: hsla(280, 61%, 50%, 1);
-
+  /* COLORS */
+  --c-black: #000000;
+  --c-white: #FFFFFF;
+  --c-gray-05: #F6F8F9;
+  --c-gray-10: #E4E9EC;
+  --c-gray-20: #D3D8DE;
+  --c-gray-30: #B1BBC9;
+  --c-gray-40: #93A1B4;
+  --c-gray-50: #7988A0;
+  --c-gray-60: #505E77;
+  --c-gray-70: #344360;
+  --c-gray-80: #212F4A;
+  --c-gray-90: #121D30;
+  --c-darkblue: #00008a;
+  --c-darkorchid: #9932cd;
   --c-gradient-horizontal: linear-gradient(90deg, var(--c-darkblue) 0%, var(--c-darkorchid) 100%);
 
+  /* FONTS */
   --f-family-s: 'Merriweather', serif;
   --f-family-ss: 'Inter', sans-serif;
   --f-family-ms: 'JetBrains Mono', monospace;
-
   --f-size-default: 16px;
-
   --f-weight-normal: 400;
   --f-weight-medium: 500;
   --f-weight-semibold: 600;
 
-
+  /* SPACING */
   --space-unit: 16px;
   --space-4: calc( var(--space-unit ) * 25 / 100 );
   --space-8: calc( var(--space-unit ) * 50 / 100 );
