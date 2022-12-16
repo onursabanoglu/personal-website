@@ -22,14 +22,6 @@ const IndexPage = () => {
           </a>
           .
         </p>
-        <p>
-          In my remaining time from software, I watch movies and TV shows(I'm a
-          fan of{" "}
-          <a href="https://www.imdb.com/name/nm0136797/" target="_blank">
-            Steve Carell
-          </a>
-          ), play games, play the ukulele and driving the skateboard.
-        </p>
       </section>
       <footer className="social-group">
         <h4 className="social-title">Get in Touch:</h4>
