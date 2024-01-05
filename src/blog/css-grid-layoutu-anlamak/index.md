@@ -3,7 +3,7 @@ title: CSS Grid Layout’u Anlamak
 date: "2022-02-17"
 ---
 
-### İçindekiler
+### Table of contents
 
 - [Grid Layout(Izgara Düzeni) nedir?](#what-is-grid)
 - [Izgara Düzeni Terimleri](#grid-terms)
