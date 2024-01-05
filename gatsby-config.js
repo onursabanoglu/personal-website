@@ -47,18 +47,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "Onur Şabanoğlu",
-        short_name: "Ai",
-        start_url: "/",
-        background_color: "#000",
-        theme_color: "#000",
-        display: "standalone",
-        icon: "src/images/favicon.png",
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-offline`,
