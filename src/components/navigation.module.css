@@ -10,10 +10,11 @@
     font-size: var(--f-size-default);
     font-weight: var(--f-weight-medium);
     padding-bottom: var(--space-12);
-    color: var(--c-gray-70);
+    color: var(--c-gray-80);
     margin-bottom: -1px;
 
     &.active {
+      font-weight: var(--f-weight-semibold);
       background: var(--c-gradient-horizontal);
       background-clip: text;
       -webkit-background-clip: text;

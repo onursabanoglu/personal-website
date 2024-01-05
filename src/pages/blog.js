@@ -15,7 +15,6 @@ const Blog = () => {
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               title
-              description
             }
             fields {
               slug
@@ -36,14 +35,11 @@ const Blog = () => {
         {data.allMarkdownRemark.edges.map(edge => {
           return (
             <div className={BlogStyles.postItem}>
-              <h4 className={BlogStyles.postTitle}>
+              <h3 className={BlogStyles.postTitle}>
                 <Link to={`${edge.node.fields.slug}`}>
                   {edge.node.frontmatter.title}
                 </Link>
-              </h4>
-              <div className={BlogStyles.postSummary}>
-                {edge.node.frontmatter.description}
-              </div>
+              </h3>
               <div className={BlogStyles.postMeta}>
                 <span className={BlogStyles.metaItem}>
                   {edge.node.frontmatter.date}

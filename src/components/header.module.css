@@ -11,7 +11,8 @@
   .title {
     font-size: calc(var(--f-size-default) * 2);
     font-weight: var(--f-weight-medium);
-    color: var(--c-gray-70);
+    line-height: 1.4;
+    color: var(--c-gray-80);
     letter-spacing: -0.75px;
   }
 
@@ -20,4 +21,3 @@
     color: var(--c-gray-50);
   }
 }
-

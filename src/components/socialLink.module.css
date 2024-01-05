@@ -1,25 +1,25 @@
 .social-wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items:center;
+  align-items: center;
   gap: var(--space-12);
-  
 
   .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: var(--space-12);
-    background-color: var(--c-gray-10);
+    gap: var(--space-4);
+    background-color: var(--c-gray-05);
 
-    border-radius: var(--space-16);
-    fill: var(--c-gray-70);
+    border-radius: var(--space-12);
 
-    > svg {
-      fill: inherit;
+    .social-label {
+      color: var(--c-gray-80);
+      line-height: 1;
     }
   }
   .social-link:matches(:hover, :focus) {
-    background-color: var(--c-gray-20);
+    background-color: var(--c-gray-10);
   }
 }

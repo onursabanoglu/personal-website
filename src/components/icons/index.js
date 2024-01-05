@@ -6,7 +6,7 @@ import Instagram from "./Instagram"
 import Linkedin from "./Linkedin"
 import Medium from "./Medium"
 import Twitter from "./Twitter"
-import Xbox from "./Xbox"
+import Codepen from "./Codepen"
 import Letterboxd from "./Letterboxd"
 import Goodreads from "./Goodreads"
 
@@ -24,8 +24,8 @@ const Icon = props => {
       return <Medium {...props} />
     case "Twitter":
       return <Twitter {...props} />
-    case "Xbox":
-      return <Xbox {...props} />
+    case "Codepen":
+      return <Codepen {...props} />
     case "Letterboxd":
       return <Letterboxd {...props} />
     case "Goodreads":

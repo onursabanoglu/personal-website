@@ -2,15 +2,12 @@
   .container {
     width: 100%;
     max-width: 768px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: var(--space-32);
-    padding-left: var(--space-32);
+    margin-inline: auto;
+    padding-inline: var(--space-32);
   }
 
   .content {
-    padding-top: var(--space-32);
-    padding-bottom: var(--space-32);
+    padding-block: var(--space-20);
     display: flex;
     flex-direction: column;
   }

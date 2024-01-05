@@ -6,19 +6,18 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--c-gray-10);
-    padding-top:  var(--space-20);
-    padding-bottom:  var(--space-20);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
 
     &:first-child {
       padding-top: 0;
     }
 
     .post-title {
-      margin-bottom: var(--space-8);
-
       a {
-        color: var(--c-gray-70);
-        font-weight: var(--f-weight-medium);
+        font-size: calc(var(--f-size-default) * 1.125);
+        color: var(--c-gray-80);
+        font-weight: var(--f-weight-normal);
 
         &:matches(:hover, :focus) {
           text-decoration: underline;
@@ -26,14 +25,9 @@
       }
     }
 
-    .post-summary {
-      color: var(--c-gray-60);
-    }
-
     .post-meta {
-      margin-top: var(--space-12);
       color: var(--c-gray-50);
-      font-size: calc(var(--f-size-default) / 1.125);
+      font-size: calc(var(--f-size-default) * 0.875);
     }
   }
 }

@@ -1,33 +1,30 @@
 ---
-title: CSS’te Değişkenler
+title: Variables in CSS
 date: "2020-07-18"
-description: "Değişkenler programlama dillerinin neredeyse hepsinde kullanılan bir özelliktir. Frontend dünyasında ise, değişkenler en çok talep edilen CSS özelliklerinden birisiydi..."
 ---
 
-Değişkenler programlama dillerinin neredeyse hepsinde kullanılan bir özelliktir. Frontend dünyasında ise, değişkenler en çok talep edilen CSS özelliklerinden birisiydi. Bu özelliği önceden sadece CSS Önişlemcileri (pre-processor) ile birlikte kullanabiliyorduk. Büyük projelerde, derlenme sürelerinin uzun sürmesi gibi durumlar Önişlemci kullanmanın dezavantajlarını ortaya çıkardı. CSS’in bugün geldiği noktaya bakarsak, herhangi bir Önişlemciye ihtiyaç duymadan bu özelliği kullanmamızı sağlıyor.
+Variables are a feature used in almost all programming languages. In the frontend world, variables were one of the most requested CSS features. Previously, this feature could only be used with CSS preprocessors. Disadvantages of using preprocessors, such as long compilation times in large projects, became apparent. Looking at where CSS stands today, we can use this feature without the need for any preprocessors.
 
-Bir proje üzerinde çalışırken birçok öge için aynı değerleri (metin renkleri, arka plan renkleri vb.) kullanmamız gerekir. Bu gibi durumlarda aynı kodu tekrar tekrar yazmak yerine, bir defaya mahsus değişkene bir değer tanımlayıp, bu değişkeni kullanacağımız yerlerde çağırmak, projemiz açısından hem tutarlılık sağlayacak, hemde projenin bakımını kolaylaştıracaktır.
-Değişkenler, renkleri, yazı tiplerini ve boşluk değerleri gibi CSS özelliklerini tek bir noktadan yönetmeyi ve bir kod tabanı genelinde tutarlılık sağlamayı kolaylaştırır. Değişkenleri kullanarak bir özelliğe bir değer atayabilir ve bunu CSS kodumuzda ihtiyaç olunan yerlerde yeniden kullanabiliriz.
+While working on a project, it is necessary to use the same values for many elements (such as text colors, background colors, etc.). In such situations, instead of repeatedly writing the same code, defining a value for a variable once and calling this variable where needed will provide consistency for our project and make maintenance easier.
 
-Bir proje üzerinde çalışırken birçok öge için aynı değerleri (metin renkleri, arka plan renkleri vb.) kullanmamız gerekir. Bu gibi durumlarda aynı kodu tekrar tekrar yazmak yerine, bir defaya mahsus değişkene bir değer tanımlayıp, bu değişkeni kullanacağımız yerlerde çağırmak, projemiz açısından hem tutarlılık sağlayacak, hemde projenin bakımını kolaylaştıracaktır.
-Değişkenler, renkleri, yazı tiplerini ve boşluk değerleri gibi CSS özelliklerini tek bir noktadan yönetmeyi ve bir kod tabanı genelinde tutarlılık sağlamayı kolaylaştırır. Değişkenleri kullanarak bir özelliğe bir değer atayabilir ve bunu CSS kodumuzda ihtiyaç olunan yerlerde yeniden kullanabiliriz.
+Variables make it easy to manage CSS properties like colors, font types, and spacing values from a single point, facilitating consistency across a codebase. By assigning a value to a property using variables, we can reuse it in the necessary places within our CSS code.
 
-##### Bu bölümde CSS değişkenlerinin şu özelliklerine değinmeye çalışacağım;
+#### In this section, I will try to address the following features of CSS variables:
 
-- CSS’te değişkenler nasıl tanımlanır ve bu değişkenler için varsayılan değerler nasıl ayarlanır?
-- Tanımladığımız değişkenleri projemizde nasıl kullanabiliriz?
-- Değişkenlerde dinamik yapı nedir ve medya sorguları ile nasıl çalışır?
-- Değişkenlerin güncel tarayıcı destek durumları
+- How to define variables in CSS and set default values for these variables?
+- How can we use the variables we've defined in our project?
+- What is the dynamic nature of variables, and how do they work with media queries in CSS?
+- Current browser support status of variables.
 
-## Değişken Tanımlama
+## Variable Definition
 
-Her Önişlemci, değişkenleri tanımlamak için farklı yollar kullanır. Örneğin Sass’ta değişken tanımlamak için değişken isminin başına “**\$**” işareti, Less’te ise “**@**” işareti gelir. Bir CSS değişkeni tanımlamak için ise, değişken isminin önüne çift tire (--) ile başlayan bir tanım yapılır. Tire işareti CSS ayrıştırıcısına bunun bir CSS değişkeni olduğu belirtir ve bu değişkenin kullanıldığı heryerde, tanımlanan değişken değeri kullanılır.
+Each preprocessor uses different syntax for defining variables. For example, in Sass, a variable is defined by adding a `$` sign before the variable name, while in Less, the `@` sign is used. However, to define a CSS variable, you use a syntax where the variable name starts with a double dash (--). The dash indicates to the CSS parser that this is a CSS variable. The value assigned to the variable will be used wherever the variable is referenced.
 
 ```css
 --primary-color: #1a73e8;
 ```
 
-Bildiğiniz gibi Javascript’te değişkenleri, global ve local olarak iki şekilde tanımlayabiliyoruz. Aynı durum CSS değişkenleri içinde geçerlidir.
+As you may know, in JavaScript, we can define variables in two ways: globally and locally. The same applies to CSS variables.
 
 ```css
 :root {
@@ -39,9 +36,9 @@ p {
 }
 ```
 
-`:root` seçici, Belgenin kök elamanın yerine geçer(yani onu temel alır). Örneğin HTML dosyasında :root, <html> etiketini temsil eder. Dolayısıyla :root’ a tanımlanan değişkenler, global değişken olarak kabul edilir. `--secondary-color` değişkeni ise bir local değişkendir.
+The `:root` selector replaces the root element of the document (i.e., it represents the <html> tag in an HTML file). Therefore, variables defined under `:root` are considered global variables. On the other hand, the `--secondary-color` variable is a local variable.
 
-Değişken isimleri büyük küçük harf duyarlıdır. Yani `--primary-color` ve `--primary-Color` iki farklı değişkenlerdir.
+Variable names are case-sensitive. Therefore, `--primary-color` and `--primary-Color` are two different variables.
 
 ```css
 :root {
@@ -50,9 +47,9 @@ Değişken isimleri büyük küçük harf duyarlıdır. Yani `--primary-color` v
 }
 ```
 
-## Değişken Kullanımı
+## Variable Usage
 
-CSS’te değişkenler `var()` fonksiyonu ile çağırılır. Örneğin `--primary-color` değişkenimize atanan değeri, buton arka plan rengi olarak kullanmak isteseydik;
+In CSS, variables are called using the `var()` function. For example, if we wanted to use the value assigned to the `--primary-color` variable as the background color for a button, we would do the following:
 
 ```css
 :root {
@@ -64,9 +61,9 @@ button {
 }
 ```
 
-şeklinde tanımlama yapmamız gerekirdi.
+We would need to define it in the following way.
 
-CSS değişkenleri yalnızca standart CSS özelliklerinin değerlerini ayarlamak için kullanılabilir. Örneğin bir özellik adını, bir değişken olarak tanımlayıp kullanamayız.
+CSS variables can only be used to set values for standard CSS properties. For example, we can't define and use a property name as a variable.
 
 ```css
 :root {
@@ -74,11 +71,12 @@ CSS değişkenleri yalnızca standart CSS özelliklerinin değerlerini ayarlamak
 }
 
 button {
+  /* Invalid syntax */
   var(--top-border): 10px solid #1a73e8;
 }
 ```
 
-Ayrıca bir özellik değerini de değişken olarak tanımlayıp kullanamayız.
+Additionally, we can't define and use a property value as a variable in CSS.
 
 ```css
 :root {
@@ -86,11 +84,12 @@ Ayrıca bir özellik değerini de değişken olarak tanımlayıp kullanamayız.
 }
 
 button {
+  /* Invalid syntax */
   var(--text-color);
 }
 ```
 
-Yapılamayacaklardan bir tanesi de bir değişkeni, bir değer dizesinin parçası olarak birleştiremeyiz.
+One of the things we can't do is concatenate a variable as part of a string value.
 
 ```css
 :root {
@@ -102,10 +101,10 @@ body {
 }
 ```
 
-## Bir Yedek Belirleme
+## Setting a Fallback
 
-`var()` fonksiyonunu kullanarak, verilen değişken henüz tanımlanmamışsa veya geçersiz bir değere sahipse, yedek bir değer atayabiliyoruz.
-`var()` fonksiyonu en fazla iki değer alabilir. Bunlardan ilki bir mutlaka bir özellik adı olmalıdır. İkincisi değer ise, isteğe bağlı olup, ilk değerin geçersiz olduğu durumda kullanılır.
+Using the `var()` function, we can assign a fallback value if the given variable is either not defined or has an invalid value.
+The `var()` function can take a maximum of two values. The first one must be a property name, and the second, which is optional, is a value used when the first value is invalid.
 
 ```css
 :root {
@@ -117,9 +116,9 @@ button {
 }
 ```
 
-`--primary-color` değişkenine bir değer ataması yapıldıysa, arka plan rengi **#1A73E8** olacaktır, tanımlanmamış ise o zaman arka plan rengi blue değerinin rengi olacaktır.
+If the `--primary-color` variable has been assigned a value, the background color will be #1a73e8. If it is not defined, the background color will default to the color of the blue keyword.
 
-Var() fonksiyonu içinde, ikinci bir değer olarakta değişken kullanabiliyoruz.
+Inside the `var()` function, we can use another variable as the second value.
 
 ```css
 :root {
@@ -132,17 +131,17 @@ button {
 }
 ```
 
-Yukarıda ki kod bloğunda `--primary-color` değişkenine bir değer ataması yapıldıysa arka plan rengi primary-color’a atanan değer, tanımlanmamış ise secondary-color’a atanan değer olacaktır. İki değişkene de tanımlama yapılmadıysa arka plan rengi, özelliğin başlangıç değeri olacaktır.
+In the above code block, if a value is assigned to the `--primary-color` variable, the background color will be the value assigned to `--primary-color`. If it is not defined, the background color will be the value assigned to `--secondary-color`. If neither variable is defined, the background color will default to the initial value of the property.
 
-## Dinamik Yapısı ve Medya Sorguları ile Kullanma
+## Dynamic Structure and Usage with Media Queries
 
-CSS değişkenlerinin en büyük avantajlarından bir tanesi de dinamik bir yapısının olmasıdır. Peki nedir bu dinamik yapı?
+One of the greatest advantages of CSS variables is their dynamic nature. So, what does this dynamic structure entail?
 
-Ön işlemcilerle birlikte kullanılan değişkenler statik bir yapıya sahiptirler, CSS’te ise bu durum farklıdır. CSS’te tanımlanan bir değişken, dinamik yapıya sahip olduğu için değiştirilebilir özelliği vardır.
+Variables used with preprocessors have a static nature, unlike in CSS. In CSS, a defined variable has a dynamic structure, allowing it to be changeable.
 
-Bunu en çok kullandığımız noktalardan bir tanesi de, farklı ekran boyutları için kullandığımız, medya sorguları ile birlikte kullanımını göreceğiz.
+One of the instances where we commonly utilize this dynamic feature is when working with media queries, especially for different screen sizes.
 
-CSS değişkenlerini medya sorguları ile birlikte kullanabiliyoruz. Böylece farklı ekran boyutları için stillerimizi tek bir noktadan yönetmek daha kolay hale geliyor.
+CSS variables can be used in conjunction with media queries, making it more convenient to manage styles for various screen sizes from a centralized point.
 
 ```css
 :root {
@@ -160,30 +159,28 @@ button {
 }
 ```
 
-Yukarıda ki örnekte, ekran genişliği 576px’ e kadar Butonun padding değeri 1rem olarak ayarlanacak, ekran genişliği 576px’ i aştığı an padding değeri 2rem olacaktır.
+In the example above, the padding value for the button will be set to 1rem until the screen width reaches 576px. Once the screen width exceeds 576px, the padding value will be adjusted to 2rem.
 
-## Tarayıcı Desteği
+## Browser Support
 
-CSS’te değişkenler, birçok güncel tarayıcı tarafından desteklenir. İnternet Explorer hiçbir sürümü desteklemezken, Microsoft Edge’in 15'ten, Safari’nin ise 9.1'den sonraki sürümleri destekler. Microsoft Edge’in 15 sürümü desteklemesine rağmen hâlâ birkaç hataya sahiptir.
+In CSS, variables are supported by many contemporary browsers. Internet Explorer does not support them in any version, while Microsoft Edge supports them from version 15 onward, and Safari supports them from version 9.1 onward. Despite Microsoft Edge version 15 supporting CSS variables, it still has a few issues.
 
 ![Thumbnail](./browser-support.png)
 
-Tarayıcı desteğinin güncel durumunu ve diğer CSS özelliklerinin tarayıcı destek durumlarına aşağıdaki linkten ulaşabilirsiniz. <br>
-https://caniuse.com/?search=Custom%20Properties
+You can access the current browser support from <a href="https://caniuse.com/?search=Custom%20Properties" target="_blank">here</a>
 
-### Özetle;
+#### In summary;
 
-CSS Değişkenleri:
+CSS Variables:
 
-- Herhangi bir ön işlemci kullanmadan, değişken tanımlamamıza,
-- Basit ve bakımı kolay Css yazmamıza,
-- Tekrarlanan değerler için tek referans noktası oluşturmamıza,
-- Farklı ekran boyutları için atanan değerleri daha kolay yönetmemize olanak sağlar.
+- Allow us to define variables without using any preprocessor,
+- Enable us to write simple and maintainable CSS,
+- Create a single reference point for repeated values,
+- Facilitate easier management of values assigned for different screen sizes.
 
 <br>
-<br>
 
-#### Kaynaklar;
+#### Resources:
 
 - https://www.sitepoint.com/premium/books/css-master-2nd-edition
 - https://fatihhayrioglu.com/css-degiskenleri-custom-properties/

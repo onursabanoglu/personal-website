@@ -1,6 +1,48 @@
 :root {
   /* COLORS */
-  --c-black: #000000;
+  --c-white: #ffffff;
+  --c-gray-05: #f4f4f4;
+  --c-gray-10: #e0e0e0;
+  --c-gray-20: #c6c6c6;
+  --c-gray-30: #a8a8a8;
+  --c-gray-40: #8d8d8d;
+  --c-gray-50: #6f6f6f;
+  --c-gray-60: #525252;
+  --c-gray-70: #393939;
+  --c-gray-80: #262626;
+  --c-gray-90: #161616;
+  --c-darkblue: #00008a;
+  --c-darkorchid: #9932cd;
+  --c-gradient-horizontal: linear-gradient(
+    90deg,
+    var(--c-darkblue) 0%,
+    var(--c-darkorchid) 100%
+  );
+
+  /* FONTS */
+  --f-family-ss: "Geist", sans-serif;
+  --f-family-ms: "Geist Mono", monospace;
+  --f-size-default: 16px;
+  --f-weight-normal: 400;
+  --f-weight-medium: 500;
+  --f-weight-semibold: 600;
+
+  /* SPACING */
+  --space-unit: 16px;
+  --space-4: calc(var(--space-unit) * 0.25);
+  --space-8: calc(var(--space-unit) * 0.5);
+  --space-12: calc(var(--space-unit) * 0.75);
+  --space-16: var(--space-unit);
+  --space-20: calc(var(--space-unit) * 1.25);
+  --space-24: calc(var(--space-unit) * 1.5);
+  --space-28: calc(var(--space-unit) * 1.75);
+  --space-32: calc(var(--space-unit) * 2);
+  --space-40: calc(var(--space-unit) * 2.5);
+  --space-48: calc(var(--space-unit) * 3);
+  --space-56: calc(var(--space-unit) * 3.5);
+  --space-64: calc(var(--space-unit) * 4);
+
+  /* --c-black: #000000;
   --c-white: #FFFFFF;
   --c-gray-05: #F6F8F9;
   --c-gray-10: #E4E9EC;
@@ -14,29 +56,29 @@
   --c-gray-90: #121D30;
   --c-darkblue: #00008a;
   --c-darkorchid: #9932cd;
-  --c-gradient-horizontal: linear-gradient(90deg, var(--c-darkblue) 0%, var(--c-darkorchid) 100%);
+  --c-gradient-horizontal: linear-gradient(90deg, var(--c-darkblue) 0%, var(--c-darkorchid) 100%); */
 
   /* FONTS */
-  --f-family-s: 'Merriweather', serif;
-  --f-family-ss: 'Inter', sans-serif;
-  --f-family-ms: 'JetBrains Mono', monospace;
+  /* --f-family-s: "Merriweather", serif;
+  --f-family-ss: "Inter", sans-serif;
+  --f-family-ms: "JetBrains Mono", monospace;
   --f-size-default: 16px;
   --f-weight-normal: 400;
   --f-weight-medium: 500;
-  --f-weight-semibold: 600;
+  --f-weight-semibold: 600; */
 
   /* SPACING */
-  --space-unit: 16px;
-  --space-4: calc( var(--space-unit ) * 25 / 100 );
-  --space-8: calc( var(--space-unit ) * 50 / 100 );
-  --space-12: calc(var(--space-unit ) * 75 / 100 );
+  /* --space-unit: 16px;
+  --space-4: calc(var(--space-unit) * 25 / 100);
+  --space-8: calc(var(--space-unit) * 50 / 100);
+  --space-12: calc(var(--space-unit) * 75 / 100);
   --space-16: var(--space-unit);
-  --space-20: calc( var(--space-unit ) * 125 / 100 );
-  --space-24: calc( var(--space-unit ) * 150 / 100 );
-  --space-28: calc( var(--space-unit ) * 175 / 100 );
-  --space-32: calc( var(--space-unit ) * 200 / 100 );
-  --space-40: calc( var(--space-unit ) * 250 / 100 );
-  --space-48: calc( var(--space-unit ) * 300 / 100 );
-  --space-56: calc( var(--space-unit ) * 350 / 100 );
-  --space-64: calc( var(--space-unit ) * 400 / 100 );
+  --space-20: calc(var(--space-unit) * 125 / 100);
+  --space-24: calc(var(--space-unit) * 150 / 100);
+  --space-28: calc(var(--space-unit) * 175 / 100);
+  --space-32: calc(var(--space-unit) * 200 / 100);
+  --space-40: calc(var(--space-unit) * 250 / 100);
+  --space-48: calc(var(--space-unit) * 300 / 100);
+  --space-56: calc(var(--space-unit) * 350 / 100);
+  --space-64: calc(var(--space-unit) * 400 / 100); */
 }

@@ -14,6 +14,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Twitter" />
+        <span className={socialLinkStyles.socialLabel}>Twitter</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -22,6 +23,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Github" />
+        <span className={socialLinkStyles.socialLabel}>Github</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -30,6 +32,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Medium" />
+        <span className={socialLinkStyles.socialLabel}>Medium</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -38,6 +41,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Linkedin" />
+        <span className={socialLinkStyles.socialLabel}>Linkedin</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -46,14 +50,16 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Dribbble" />
+        <span className={socialLinkStyles.socialLabel}>Dribbble</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
-        href="https://live.xbox.com/tr-TR/Profile?gamertag=onursabanoglu"
+        href="https://codepen.io/Onursabanoglu"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name="Xbox" />
+        <Icon name="Codepen" />
+        <span className={socialLinkStyles.socialLabel}>Codepen</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -62,6 +68,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Letterboxd" />
+        <span className={socialLinkStyles.socialLabel}>Letterboxd</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -70,6 +77,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Goodreads" />
+        <span className={socialLinkStyles.socialLabel}>Goodreads</span>
       </OutboundLink>
       <OutboundLink
         className={socialLinkStyles.socialLink}
@@ -78,6 +86,7 @@ const SocialLink = () => {
         rel="noopener noreferrer"
       >
         <Icon name="Instagram" />
+        <span className={socialLinkStyles.socialLabel}>Instagram</span>
       </OutboundLink>
     </nav>
   )

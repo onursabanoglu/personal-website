@@ -1,7 +1,6 @@
 ---
 title: CSS Grid Layout’u Anlamak
 date: "2022-02-17"
-description: "Web sayfalarında önceden sayfa düzenleri oluştururken table, float gibi CSS özellikleri kullanılıyordu. Ancak bu özellikler, sayfa düzenleri oluşturmak için geçici çözümlerdi, çünkü ne table ne de float, sayfa düzenleri oluşturmak için tasarlanmamıştı."
 ---
 
 ### İçindekiler

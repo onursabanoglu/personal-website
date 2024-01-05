@@ -24,7 +24,7 @@ const IndexPage = () => {
         </p>
       </section>
       <footer className="social-group">
-        <h4 className="social-title">Get in Touch:</h4>
+        <h5 className="social-title">Get in Touch:</h5>
         <SocialLink />
       </footer>
     </Layout>
