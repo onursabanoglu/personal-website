@@ -1,100 +1,97 @@
 ---
-title: CSS Grid Layout’u Anlamak
+title: Understanding CSS Grid Layout
 date: "2022-02-17"
 ---
 
 ### Table of contents
 
-- [Grid Layout(Izgara Düzeni) nedir?](#what-is-grid)
-- [Izgara Düzeni Terimleri](#grid-terms)
-- [Izgara Kapsayıcısı: Izgara yapısını tanımlama](#grid-container)
+- [What is Grid Layout?](#what-is-grid)
+- [Grid Layout Terms](#grid-terms)
+- [Grid Container: Defining the Grid Structure](#grid-container)
 
-  - [Izgara tanımlama](#grid-defination)
-  - [Satır ve sütun boyutları tanımlama](#line-column-defination)
-  - [Fr birimi ile satır ve sütun boyutlarını tanımlama](#fr-defination)
-    - [Tekrar eden satırlar ve sütunlar](#repeat)
-    - [Minmax() fonksiyonu](#minmax)
-  - [Izgara öğelerini aralama](#grid-gap)
-  - [Explicit(Belirli) Grid ve Implicit(Belirsiz) Grid](#grid-explicit-implicit)
+  - [Grid definition](#grid-definition)
+  - [Defining row and column sizes](#line-column-definition)
+  - [Defining row and column sizes with the fr unit](#fr-definition)
+    - [Repeating rows and columns](#repeat)
+    - [The minmax() function](#minmax)
+  - [Spacing grid items](#grid-gap)
+  - [Explicit and Implicit Grid](#grid-explicit-implicit)
 
-- [Izgara Öğeleri: Öğeleri ızgaraya yerleştirme](#grid-items)
-  - [Adlandırılmış ızgara çizgilerini kullanma](#grid-lines)
-  - [Adlandırılmış ızgara alanlarını kullanma](#grid-line-named)
-- [Izgara Hizalama: Izgarayı ve Izgara Öğelerini Hizalama](#grid-alignment)
-  - [Satır ve sütun ekseni](#row-column-axis)
-  - [Izgara hizalama özellikleri](#align-feature)
-  - [Izgara öğelerini sıralama](#grid-order)
-- [Izgara Denetçi Aracı](#grid-inspector)
-- [Tarayıcı Desteği](#grid-support)
+- [Grid Items: Placing Items on the Grid](#grid-items)
+  - [Using named grid lines](#grid-lines)
+  - [Using named grid areas](#grid-line-named)
+- [Grid Alignment: Aligning the Grid and Grid Items](#grid-alignment)
+  - [Row and column axes](#row-column-axis)
+  - [Grid alignment properties](#align-feature)
+  - [Ordering grid items](#grid-order)
+- [Grid Inspector Tool](#grid-inspector)
+- [Browser Support](#grid-support)
 
-Web sayfalarında önceden sayfa düzenleri oluştururken `table`, `float` gibi CSS özellikleri kullanılıyordu. Ancak bu özellikler, sayfa düzenleri oluşturmak için geçici çözümlerdi, çünkü ne `table` ne de `float`, sayfa düzenleri oluşturmak için tasarlanmamıştı. Bu sayfaların daha karmaşık hale gelmesiyle, daha gelişmiş ve kolay sayfa düzenleri oluşturma ihtiyacı doğdu.
+When creating page layouts for web pages in the past, CSS features like table and float were commonly used. However, these features were temporary solutions for creating page layouts as neither table nor float were designed for this purpose. As web pages became more complex, there arose a need for more advanced and convenient methods to create page layouts.
 
-Bunun yanı sıra, mobil telefon kullanımının yaygınlaşması, duyarlı sitelerin ortaya çıkmasına sebep oldu. Duyarlı sitelere duyulan ihtiyaç arttıkça, yerleşim düzeninin karmaşıklığı da arttı. Bu karmaşıklık, duyarlı site oluşturmayı kolaylaştırmak için bir dizi özelliğin geliştirilmesine yol açtı.
+Additionally, the widespread use of mobile phones led to the emergence of responsive websites. With the increasing demand for responsive sites, the complexity of layout design also grew. This complexity prompted the development of a set of features to facilitate the creation of responsive websites.
 
-Daha sonra, öğeleri satırlar veya sütunlar haline yerleştirmek için kullanılan tek boyutlu bir yerleşim aracı olan Flexbox özelliği geldi. Flexbox, öğeleri konumlandırma ile ilgili birçok sorunu çözmek için tasarlanmıştı. Yerleşim düzeni olarak kullanılan önceki yöntemlerde oldukça zor ve maliyetli olan işleri bir hayli kolaylaştırdığı için, bu büyük bir gelişmeydi.
+Subsequently, the Flexbox feature was introduced as a one-dimensional layout tool used to place items into rows or columns. Flexbox was designed to solve many issues related to positioning elements. It represented a significant advancement because it simplified tasks that were challenging and costly with previous layout methods.
 
-Yerleşim düzeni için sonraki adım, CSS tabanlı bir ızgara sistemi kullanmaktı. Kendi tarayıcıları için daha gelişmiş bir yerleşim düzeni arayan Microsoft çalışanları, ilk olarak Internet Explorer 10'da kullanılmak üzere bir ızgara düzeni üzerinde çalıştılar. Microsoft uygulamasında yayınlandıktan sonra, birkaç web geliştiricisi de bu özelliği denemeye başladı. Bu denemeler sonucunda, W3C'yi üzerinde çalışmaya ve bir özellik olarak yayınlamaya teşvik etti. Bu çalışmaların ardından CSS Grid için tarayıcı desteği, 2017'de Chrome, Firefox, Safari ve Opera'ya desteklenen tüm sürümleri yayınlandı.
+The next step in layout design was to use a CSS-based grid system. Microsoft employees, seeking a more advanced layout system for their browsers, initially worked on a grid layout for Internet Explorer 10. After its implementation in Microsoft's browser, several web developers began experimenting with this feature. The positive results from these experiments encouraged the W3C to work on and release it as a feature. Following these efforts, browser support for CSS Grid was rolled out in all supported versions of Chrome, Firefox, Safari, and Opera in 2017.
 
-## Grid Layout(Izgara Düzeni) nedir? <a name="what-is-grid"></a>
+## What is Grid Layout? <a name="what-is-grid"></a>
 
-CSS Izgara düzeni, bir web sayfasındaki veya uygulamadaki öğelerin iki boyutlu düzeni için tasarlanmış bir CSS düzen yöntemidir.
+CSS Grid layout is a CSS layout method designed for the two-dimensional arrangement of elements on a web page or application.
 
-Temel amacı, bir HTML elemanını satırlara ve sütunlara bölerek iki boyutlu bir ızgaraya dönüştürmektir. table gibi HTML'de oluşturduğumuz düzenlerin aksine, bu düzeni bize CSS'te oluşturmamızı sağlar. CSS'te oluşturulan düzenin en büyük avantajı, medya sorguları kullanarak yeniden tanımlanabilen ve farklı bağlamlara uyarlanabilen düzenler oluşturmasıdır. Ayrıca kapsadığı öğeleri konumlandırma ve düzenleme için de çok fazla özellik ve esneklik sunar.
+Its primary purpose is to transform an HTML element into a two-dimensional grid by dividing it into rows and columns. In contrast to layouts created in HTML, such as using tables, CSS Grid allows us to create this layout in CSS. The significant advantage of layouts created in CSS is their adaptability to different contexts through the use of media queries. Additionally, CSS Grid provides a wealth of features and flexibility for positioning and organizing the elements it encompasses.
 
-## Izgara Düzeni Terimleri <a name="grid-terms"></a>
+## Grid Layout Terms <a name="grid-terms"></a>
 
-Izgara düzeni özelliklerinin ve öğelerinin nasıl çalıştığına geçmeden önce ızgara düzenine ait bazı ızgara terimleri vardır. Bu terimler, ızgara düzenimizin nasıl çalıştığını ve çalıştığımız ızgara düzenini anlamamızı kolaylaştırır.
+Before delving into how the features and elements of the grid layout work, there are certain grid terms associated with the grid layout. These terms make it easier for us to understand how our grid layout operates and the specifics of the grid layout we are working with.
 
-#### Grid Container (Izgara Kapsayıcısı)
+#### Grid Container
 
-Izgara öğelerini sarmalayan kapsayıcıdır. display: grid tanımlanan kapsam, içindeki öğeleri ızgara öğesi düzenine sokar.
+It is the container that wraps the grid items. The scope defined by display: grid organizes the enclosed items into a grid item layout.
 
 ![grid-container](./assets/grid-container.png)
 
-#### Grid Item (Izgara Öğesi)
+#### Grid Item
 
-Izgara kapsayıcısının doğrudan alt öğeleridir.
+They are the direct child elements of the grid container.
 
 ![grid-item](./assets/grid-item.png)
 
-#### Grid Lines (Izgara Çizgileri)
+#### Grid Lines
 
-Izgarayı oluşturan yatay ve dikey çizgilerdir. Bir ızgara düzeni oluşturduğumuzda, ızgara bize içindeki öğeleri konumlandırmamızı kolaylaştırmak için numaralı çizgiler verir. Sütun çizgileri soldan sağa, satır çizgileri ise yukarıdan aşağıya 1'den başlayarak numaralandırılır.
+They are the horizontal and vertical lines that form the grid. When creating a grid layout, the grid provides numbered lines to facilitate the positioning of elements within it. Column lines are numbered from left to right, and row lines are numbered from top to bottom, starting from 1.
 
 ![grid-line](./assets/grid-line.png)
 
-Bir ızgara düzeninde kaç adet satır veya sütun var ise, +1 kadar satır ve sütun çizgisi bulunur. Örneğin dört satır, üç sütunlu bir ızgara düzeninde, beş satır, dört sütun çizgisi vardır.
+In a grid layout, there are as many grid lines as there are rows or columns, plus 1. For example, in a grid layout with four rows and three columns, there would be five row lines and four column lines.
 
-#### Grid Track (Izgara İzi)
+#### Grid Track
 
-Yatay ve dikey iki ızgara çizgisi arasındaki boşluktur. Aşağıdaki görselde ızgara izi, ikinci ve üçüncü satır çizgileri arasında kalan alandır.
+It is the space between two grid lines, either horizontally or vertically. In the visual below, the grid track is the area between the second and third row lines.
 
 ![grid-track](./assets/grid-track.png)
 
-#### Grid Area (Izgara Alanı)
+#### Grid Area
 
-Izgara alanı, ızgara üzerinde dikdörtgen bir alan oluşturan bir veya daha fazla ızgara hücresini kapsayan alandır.
+A grid area is a rectangular area on the grid formed by one or more grid cells, covering a specific space on the grid.
 
 ![grid-area](./assets/grid-area.png)
 
-#### Grid Cell (Izgara Hücresi)
+#### Grid Cell
 
-Izgara hücresi, dört kesişen ızgara çizgisi arasında kalan boşluktur. Izgara içindeki en küçük birimdir.
+Grid cell is the space between four intersecting grid lines. It is the smallest unit within the grid.
 
 ![grid-cell](./assets/grid-cell.png)
 
-<br>
-<br>
+After learning about grid terms, let's now explore grid layout properties. Grid layout properties are divided into two groups: those applied to the grid container and those applied to the grid items.
 
-Izgara terimlerini öğrendikten sonra, şimdi ızgara düzeni özelliklerine bakalım. Izgara düzeni özellikleri, ızgara kapsayıcısı ve ızgara öğelerine uygulanan özellikler olmak üzere iki gruba ayrılır.
+## Grid Container: Defining the Grid Structure <a name="grid-container"></a>
 
-## Izgara Kapsayıcısı: Izgara yapısını tanımlama <a name="grid-container"></a>
+The structure of a grid container is controlled by properties applied to the grid container, such as the number of rows and columns, as well as their sizes.
 
-Bir ızgaranın kapsayıcısının yapısı, kaç satır ve sütuna sahip olduğu, boyutları gibi ızgara kapsayıcısına uygulanan özellikler tarafından kontrol edilir.
+### Grid Definition <a name="grid-defination"></a>
 
-### Izgara tanımlama <a name="grid-defination"></a>
-
-Bir ızgara düzeni oluşturmak için, kapsayıcı elemanımıza display: grid özelliğini tanımlarız. Bu tanım, kapsayıcı elemanı, ızgara kapsayıcısı, kapsayıcı elemanın doğrudan alt öğelerini de, ızgara öğeleri haline getirir.
+To create a grid layout, we define the `display: grid` property on our container element. This declaration turns the container element, which is the grid container, and its direct children into grid items.
 
 ```html
 <div class="grid-container">
@@ -115,11 +112,11 @@ Bir ızgara düzeni oluşturmak için, kapsayıcı elemanımıza display: grid �
 
 ![grid-defination](./assets/grid-defination.png)
 
-Kapsayıcı elemanımıza ızgara tanımlaması yaptıktan sonra, arayüz görünümünde herhangi bir değişiklik olmaz, çünkü tek başına display: grid tanımı, ızgarayı satırlara ve sütunlara bölmez. Kapsayıcı elemanımıza, ızgara düzenimizin kaç satır ve sütundan oluşacağını belirtmemiz gerekir.
+After applying the grid definition to our container element, there won't be any visible changes in the interface because the `display: grid` definition alone doesn't divide the grid into rows and columns. We need to specify the number of rows and columns for our grid layout on the container element.
 
-### Satır ve sütun boyutları tanımlama <a name="line-column-defination"></a>
+### Defining Row and Column Sizes <a name="line-column-defination"></a>
 
-`grid-template-rows` ve `grid-template-columns` özellikleri, ızgara düzeni için satır ve sütun tanımlaması yapmamızı sağlar. Satır ve sütun tanımlamanın birkaç farklı yöntemi vardır. Burada önemli olan noktalardan bir tanesi, ızgara yapısını oluşturmadan önce ne yapmak istediğimizi bilmektir. Bu, oluşturacağımız ızgara yapısının yaklaşımını ve kullanacağımız yöntemi belirler.
+The `grid-template-rows` and `grid-template-columns` properties allow us to define rows and columns for the grid layout. There are several methods to define rows and columns. One crucial point here is knowing what we want to achieve before creating the grid structure. This determines the approach and method we will use to create our grid layout.
 
 ```css
 .grid-container {
@@ -131,14 +128,14 @@ Kapsayıcı elemanımıza ızgara tanımlaması yaptıktan sonra, arayüz görü
 
 ![line-column](./assets/line-column.png)
 
-Yukarıda, `200px` genişliğinde üç sütunlu ve `100px` yüksekliğinde iki satırlı bir ızgara düzeni tanımlamış olduk.
+Above, we defined a grid layout with three columns each having a width of `200px` and two rows each having a height of `100px`.
 
-#### grid-template özelliği
+#### grid-template Property
 
-Yukarıdaki ızgara düzeninde sütun ve satır sayılarını tanımlamak için iki ayrı özellik kullandık. `grid-template` özelliği, bu iki özelliği tek bir satırda yazmamızı sağlıyor.
+In the above grid layout, we used two separate properties to define the number of columns and rows. The `grid-template` property allows us to write these two specifications in a single line.
 
 ```css
-/* grid-template: [satır değerleri] / [sütun değerleri] */
+/* grid-template: [row values] / [column values] */
 
 .grid-container {
   display: grid;
@@ -146,17 +143,17 @@ Yukarıdaki ızgara düzeninde sütun ve satır sayılarını tanımlamak için 
 }
 ```
 
-Bu kullanım, ızgara düzenlerinde kodu daha sade hale getirmekle birlikte kodu okumayı da zorlaştırır.
+That usage simplifies the code for grid layouts, but it also makes it harder to read.
 
-### Fr birimi ile satır ve sütun boyutlarını tanımlama <a name="fr-defination"></a>
+### Defining Row and Column Sizes with the 'fr' Unit <a name="fr-defination"></a>
 
-Izgara izleri herhangi bir uzunluk birimi kullanılarak tanımlanabilir. Bu birimlerin yanında ızgara düzeni, fraction(kesir) kelimesinin kısaltması olan `fr` adında yeni bir ölçü birimi ile gelir. Kısaca tanımı, `fr` ızgara kapsayıcısındaki kullanılabilir alanın bir bölümünü temsil eden bir birimdir.
+Grid tracks can be defined using any length unit. Alongside these units, grid layout introduces a new measurement unit called `fr`, an abbreviation for "fraction." In short, the `fr` unit represents a fraction of the available space in the grid container.
 
-Daha fazla okuma için: https://hackernoon.com/understanding-css-grids-fractional-units-fr-the-easy-way-5f43ee008f29
+Further reading: https://hackernoon.com/understanding-css-grids-fractional-units-fr-the-easy-way-5f43ee008f29
 
-Bu özelliği bir örnekle açıklamak daha doğru olacaktır.
+Now, let's illustrate this feature with an example.
 
-Her öğenin `%25` genişliğe sahip olduğu dört sütunlu bir ızgara yapısı tanımlayalım.
+Let's define a grid structure with four columns, where each item has a width of `%25`. Here is the CSS code:
 
 ```css
 .grid-container {
@@ -167,7 +164,7 @@ Her öğenin `%25` genişliğe sahip olduğu dört sütunlu bir ızgara yapısı
 
 ![grid-fraction](./assets/fraction-1.png)
 
-Izgara izlerinin her biri, ızgara kapsayıcısının %25'lik bir alanını kaplıyor. Daha sonra `grid-gap` (bu özelliğe daha sonra bakacağız) özelliğini kullanarak ızgara kapsayıcısı içindeki satırlara boşluk verelim.
+Each of the grid tracks covers a `25%` portion of the grid container. Later, we can use the `grid-gap` property (which we will explore later) to add spacing between the rows within the grid container.
 
 ```css
 .grid-container {
@@ -179,9 +176,9 @@ Izgara izlerinin her biri, ızgara kapsayıcısının %25'lik bir alanını kapl
 
 ![grid-fraction](./assets/fraction-2.png)
 
-Izgara kapsayıcısı hala aynı genişliğe sahipken, satır ve sütun boşluklarının yerleşim alanlarına dahil edilmesinden dolayı, ızgara öğeleri kapsayıcının dışına taştı.
+Even though the grid container still has the same width, the grid items overflow outside the container due to the inclusion of row and column gaps in the layout areas.
 
-Burada `fr` birimi, bu boşlukları yerleşim alanından hariç tutarak kullanılabilir alanın hesabını otomatik olarak yapıp, ızgara öğelerinin yerleşimini sağlar.
+Here, the `fr` unit automatically calculates the available space, excluding the gaps, and facilitates the placement of grid items within the layout.
 
 ```css
 .grid-container {
@@ -193,14 +190,14 @@ Burada `fr` birimi, bu boşlukları yerleşim alanından hariç tutarak kullanı
 
 ![grid-fraction](./assets/fraction-3.png)
 
-#### Tekrar eden satırlar ve sütunlar <a name="repeat"></a>
+#### Repeating Rows and Columns <a name="repeat"></a>
 
-Bazı ızgara düzenleri, satır veya sütun değerlerini tanımlarken yukarıdaki örnekte olduğu gibi kendini tekrar eden değerler içerebilir. Bu değerleri tek tek tanımlamak yerine, ızgara düzeni ile gelen başka bir özellik olan `repeat()` fonksiyonunu kullanabiliriz. `repeat()` fonksiyonunun amacı, tekrar eden değerleri daha kısa yazmamızı sağlar.
+Some grid layouts, when defining row or column values, may include repetitive values as shown in the previous example. Instead of specifying these values individually, we can use another feature that comes with grid layout, the `repeat()` function. The purpose of the `repeat()` function is to allow us to write repetitive values in a shorter form.
 
-Repeat fonksiyonu iki değer alır:
+The `repeat()` function takes two values:
 
-- İlk değer, ızgara izlerinin tekrarlanma sayısı,
-- İkinci değer ise tekrarlanacak ızgara izlerinin boyutunu belirtir.
+- The first value indicates the number of times the grid tracks will be repeated.
+- The second value specifies the size of the repeated grid tracks.
 
 ```css
 .grid-container {
@@ -209,9 +206,9 @@ Repeat fonksiyonu iki değer alır:
 }
 ```
 
-#### Minmax() fonksiyonu <a name="minmax"></a>
+#### Minmax() Function <a name="minmax"></a>
 
-`minmax()` fonksiyonu, ızgara izleri için belirli bir boyut aralığı değeri tanımlamamızı sağlar. İlk değer minimum, ikinci değer ise maksimum değeri belirtir.
+The `minmax()` function allows us to define a size range for grid tracks. The first value represents the minimum size, and the second value represents the maximum size.
 
 ```css
 .grid-container {
@@ -220,20 +217,20 @@ Repeat fonksiyonu iki değer alır:
 }
 ```
 
-İki sütunlu bir ızgara yapımızda, ilk sütunun değeri en az `200px`, en fazla `500px` genişliğe sahip olucak şekilde tanımlama yaptık. Bu tanımlama ile, ilk sütun `200px` ile `500px` arasında bir genişliğe sahip olup, ikinci sütun ise kalan boş alanı dolduracaktır.
+In our two-column grid structure, we defined the first column to have a width ranging from at least `200px` to a maximum of `500px`. With this definition, the first column will have a width between `200px` and `500px`, and the second column will fill the remaining space.
 
 ![grid-minmax](./assets/minmax.png)
 
-##### Kullanma kuralları:
+#### Usage Rules:
 
-`minmax()` fonksiyonunu kullanırken bazı dikkat etmemiz gereken kurallar vardır.
+When using the `minmax()` function, there are some rules to keep in mind:
 
-- Minimum değer, maksimum değerden büyükse, maksimum değer okunmaz, sadece minimum değer uygulanır.
-- Minimum değer için `fr` birimi kullanılmaz. Yalnızca maksimum değer için kullanılabilir.
+- If the minimum value is greater than the maximum value, the maximum value is ignored, and only the minimum value is applied.
+- The `fr` unit is not used for the minimum value; it can only be used for the maximum value.
 
-##### Repeat() fonksiyonu birlikte kullanma
+#### Combining with Repeat() Function
 
-Bir ızgara düzeninde tekrar eden değerler için de minimum ve maksimum değer aralıkları belirtebiliyoruz. Bunu `repeat` fonksiyonun içinde `minmax` kullanarak yapıyoruz.
+We can specify minimum and maximum value ranges for repetitive values in a grid layout. We achieve this by using `minmax` within the `repeat` function.
 
 ```css
 .grid-container {
@@ -244,23 +241,23 @@ Bir ızgara düzeninde tekrar eden değerler için de minimum ve maksimum değer
 
 ![grid-minmax-repeat](./assets/repeat-minmax-1.png)
 
-Yukarıdaki örnekte `repeat` ile kullandığımız `minmax` fonksiyonuna ait ızgara düzeni, her ne kadar çalışsa da aslında doğru bir yöntem değildir. Çünkü bir ızgara düzeninde `repeat` fonksiyonu ile satır veya sütun tanımlaması yaparken her zaman sabit bir değer belirtiriz. Bu değerin yanında ızgara izlerimize bir de `minmax` ile değer ataması yaptığımızda, ızgara kapsayıcısının genişliği, ızgara hücrelerinin minimum genişliğinden dar olduğu durumlarda, ızgara izleri, kapsayıcının dışına taşar ve yeni satırlara kaydırılmaz. Bunun sebebi `repeat` fonksiyonuna atanan sabit değer yüzündendir.
+In the above example, the grid layout using the minmax function within the repeat function, while functional, is not the recommended approach. When defining rows or columns with the repeat function in a grid layout, we typically specify a fixed value. When we add a value assignment to our grid tracks using minmax alongside, if the width of the grid container is narrower than the minimum width of the grid cells, the grid tracks overflow outside the container and do not wrap into new rows. This is because of the fixed value assigned to the repeat function.
 
 ![grid-minmax-repeat](./assets/repeat-minmax-2.png)
 
-Bu durumu engellemek için, ızgara düzeni ile gelen başka bir özellik olan `auto-fit` veya `auto-fill` değerlerini kullanarak, ekstra medya sorgularına ihtiyaç duymadan duyarlı bir ızgara düzeni oluşturabiliriz.
+To prevent this issue, we can create a responsive grid layout without the need for additional media queries by using the `auto-fit` or `auto-fill` values, which are another feature that comes with the grid layout.
 
-##### auto-fit ve auto-fill değerleri
+#### auto-fit and auto-fill Values
 
-`auto-fit` ve `auto-fill` değerleri, ızgara izlerinin kapsayıcının dışına taşmadan kullanılabilir alana sığacak kadar sütun veya satır oluşturmamızı sağlar. Izgara kapsayıcısına sığmadığı durumlarda ise, ızgara izlerinin, otomatik olarak bir sonraki satıra veya sütuna kaydırılmasını sağlarlar.
+The `auto-fit` and `auto-fill` values allow us to create as many columns or rows as can fit within the available space without overflowing outside the grid container. In cases where they do not fit within the grid container, they automatically move to the next row or column.
 
 ![grid-auto-fill-fit](./assets/auto-fit-fill-1.png)
 
-Bu iki değer, ilk bakışta birbirinin zıt değerleri gibi görünebilir fakat aralarında çok ince bir fark vardır. Bu ince fark, ızgara kapsayıcısının genişliği, ızgara izlerinin toplam genişliğinden fazla olduğu durumlarda ortaya çıkar.
+These two values may initially seem like opposite values, but there is a subtle difference between them. This subtle difference becomes apparent when the width of the grid container is greater than the total width of the grid tracks.
 
-`auto-fit` değeri, ızgara izlerinin toplam genişliği, ızgara kapsayıcısının genişliğini aşmadığı durumlarda kalan boş alanı, ızgara izlerini dolduracak şekilde genişletir. `auto-fill` değeri, ızgara izlerinin genişliğini değiştirmeden kalan boş alanı korur.
+The `auto-fit` value expands the remaining space to fill the grid tracks when the total width of the grid tracks does not exceed the width of the grid container. The `auto-fill` value preserves the remaining space without changing the width of the grid tracks.
 
-Aralarındaki farkı daha iyi anlamak için aşağıdaki örneğe bakalım.
+Let's look at the example below to better understand the difference.
 
 ```css
 .grid-container--fit {
@@ -276,7 +273,7 @@ Aralarındaki farkı daha iyi anlamak için aşağıdaki örneğe bakalım.
 
 ![grid-auto-fill-fit](./assets/auto-fit-fill-2.png)
 
-Belirli bir görüntü alanı genişliğine kadar, her iki değer de aynı sonucu verir. Görüntü alanı genişliği değiştiği durumda fark ortaya çıkar.
+Until a certain viewport width, both values yield the same result. The difference becomes apparent when the viewport width changes.
 
 <figure >
   <video controls="true" allowfullscreen="true">
@@ -284,9 +281,9 @@ Belirli bir görüntü alanı genişliğine kadar, her iki değer de aynı sonuc
   </video>
 </figure>
 
-### Izgara öğelerini aralama <a name="grid-gap"></a>
+### Gapping Grid Items <a name="grid-gap"></a>
 
-`column-gap` ve `row-gap` özellikleri bir ızgara düzeninde, satırlar veya sütunlar arasındaki boşluğu ayarlamak için kullanılır.
+The `column-gap` and `row-gap` properties are used in a grid layout to adjust the spacing between rows or columns.
 
 ```css
 .grid-container {
@@ -300,10 +297,10 @@ Belirli bir görüntü alanı genişliğine kadar, her iki değer de aynı sonuc
 
 ![grid-gap](./assets/gap.png)
 
-Satır ve sütun boşluklarını ayrı ayrı tanımlayabildiğimiz gibi, iki değeri `gap` özelliği sayesinde tek bir satır içinde de tanımlayabiliyoruz. Ayrıca `gap` özelliğine tek bir değerin atanması, satır ve sütun boşlukları için aynı değerin tanımlanmasını sağlar.
+We can define row and column gaps separately, or we can use the `gap` property to define both values within a single line. Additionally, assigning a single value to the `gap` property ensures that the same value is applied for both row and column gaps.
 
 ```css
-/* gap: [satır boşluğu] / [sütun boşluğu] */
+/* gap: [row gap] / [column gap] */
 
 .grid-container {
   display: grid;
@@ -313,13 +310,13 @@ Satır ve sütun boşluklarını ayrı ayrı tanımlayabildiğimiz gibi, iki de�
 }
 ```
 
-### Explicit(Belirli) Izgara ve Implicit(Belirsiz) Izgara <a name="grid-explicit-implicit"></a>
+### Explicit Grid and Implicit Grid <a name="grid-explicit-implicit"></a>
 
-Genelde bir ızgara düzeni içerisinde ızgara öğelerini boyutlandırmak ve konumlandırmak için `grid-template-columns` ve `grid-template-rows` özelliklerini kullanarak sabit sayıda bir ızgara düzeni oluştururuz. Bu sabit sayıda oluşturulan ızgara düzeninin içindeki öğelerin sayısı belli olduğu için, bu düzene “explicit(belirli)” ızgara diyoruz.
+Typically, when creating a grid layout, we use the `grid-template-columns` and `grid-template-rows` properties to define a fixed number of rows and columns for the grid. Since the number of items inside this fixed grid layout is known, we refer to this type of layout as an "explicit" grid.
 
-Ancak ızgara öğelerinin dinamik olarak geldiği bazı durumlarda, explicit(belirli) ızgara öğeleri dışında kalan ızgara öğelerimiz olabilir.
+However, in some cases where grid items are dynamically generated, we may have grid items outside of the explicitly defined grid.
 
-Örneğin `200px` genişliğinde üç sütunlu, `100px` yüksekliğinde iki satırlı bir ızgara düzeni oluşturmak istediğimizde, bu ızgara düzenine altı ızgara öğesi sığabilecek şekilde tanımlama yapmış oluruz.
+For example, when we want to create a grid layout with three columns each having a width of `200px` and two rows each having a height of `100px`, we make the definition to accommodate six grid items within this grid layout.
 
 ```html
 <div class="grid-container">
@@ -343,19 +340,19 @@ Ancak ızgara öğelerinin dinamik olarak geldiği bazı durumlarda, explicit(be
 
 ![grid-explicit](./assets/explicit-1.png)
 
-Bu ızgara düzenimize sonradan üç ızgara öğesi daha eklersek, artık sabit sayıda belirlediğimiz ızgara düzenimizin dışında üç ızgara öğesi olmuş olur. İşte bu dışarıda kalan ızgara öğelerinin bulunduğu yapıya implicit(belirsiz) ızgara denir.
+If we later add three more grid items to this grid layout, we will now have three grid items outside of our originally defined fixed grid layout. The structure that contains these items outside of the explicitly defined grid is referred to as the implicit grid.
 
 ![grid-explicit](./assets/explicit-2.png)
 
-Explicit(belirli) ızgara öğelerimizin dışında kalan, öğeler olduğu durumda, implicit(belirsiz) ızgara, kapsayıcı tarafından otomatik olarak oluşturulur ve bu öğeler varsayılan olarak otomatik boyutlandırılır. Bu öğeler ızgara düzeni içerisinde, içeriklerine genişler veya kapsayıcıdaki kalan alana göre boşluğu doldurur.
+When there are items outside of the explicitly defined grid (explicit grid items), the implicit grid is automatically created by the container, and these items are automatically sized by default. Within the grid layout, they expand based on their content or fill the remaining space in the container.
 
-Örneğin `600px` yüksekliğe sahip bir ızgara kapsayıcımızda, implicit(belirsiz) ızgara öğelerimizin yüksekliği `400px` olur.
+For example, in a grid container with a height of `600px`, the height of implicit grid items would be `400px`.
 
 ![grid-explicit](./assets/explicit-3.png)
 
-#### Implicit Izgara öğeleri için boyut belirleme
+#### Sizing Implicit Grid Items
 
-Sonradan eklenen implicit(belirsiz) ızgara öğelerimizin, diğer öğeler ile aynı yükseklikte olmadığını gördük. Peki bu ızgara öğelerimizi, diğer öğelerimiz ile nasıl aynı yüksekliğe getirebiliriz? İşte burada `grid-auto-rows` ve `grid-auto-columns` özellikleri devreye giriyor. Bu özellikler explicit(belirli) ızgara öğelerimizin dışında kalan öğeler için satır ve sütun boyutlarının belirlememizi sağlar.
+We observed that later added implicit grid items do not have the same height as the other items. How can we make these grid items have the same height as the others? This is where the `grid-auto-rows` and `grid-auto-columns` properties come into play. These properties allow us to set the row and column sizes for items outside of the explicitly defined grid.
 
 ```css
 .grid-container {
@@ -371,11 +368,11 @@ Sonradan eklenen implicit(belirsiz) ızgara öğelerimizin, diğer öğeler ile 
 
 #### grid-auto-flow
 
-Yukarıdaki örnekte implicit(belirsiz) ızgara öğelerimiz için satır yüksekliği tanımlaması yaptık. Peki satırlar yerine sütun tanımlaması yapmak isteseydik? İşte burada da grid-auto-flow özelliğini kullanabiliriz. Bu özellik otomatik yerleştirilen ızgara öğeleri için satırların mı yoksa sütunların mı kullanılacağını belirlememizi sağlar. Üç farklı değer alır, `row`, `column`, `dense`. Başlangıç değeri `row`’dur. Bu, yukarıdaki örnekte neden sütunların değilde satırların oluşturulduğunu açıklar.
+In the example above, we defined the row height for our implicit grid items. But what if we wanted to define column sizes instead of row sizes for these items? This is where the `grid-auto-flow` property comes in. This property allows us to determine whether rows or columns will be used for automatically placed grid items. It takes three values: `row`, `column`, and `dense`. The default value is row, which explains why rows were created instead of columns in the example above.
 
 ![grid-explicit](./assets/explicit-5.png)
 
-Sütunları kullanmak istersek:
+If we want to use columns:
 
 ```css
 .grid-container {
@@ -390,29 +387,29 @@ Sütunları kullanmak istersek:
 
 ![grid-auto-flow](./assets/grid-auto-flow.png)
 
-Bu tanım, implicit(belirsiz) ızgara öğelerimizin satırlar yerine, sütunlara yerleştirilmesini sağlayacaktır.
+This definition will ensure that our implicit grid items are placed in columns instead of rows.
 
-##### Dense değeri
+#### Dense Value
 
-Dense değeri, ızgara öğelerini, ızgara düzeni içerisinde daha kompakt tutmanıza ve tutarsız boyuttaki ızgara öğeleri nedeniyle oluşabilecek çok sayıda boşluğa, uygun olan ızgara öğelerinin doldurulmasını sağlar.
+The `dense` value allows you to compact grid items within the grid layout and fill in any gaps caused by inconsistent-sized grid items.
 
 ![grid-dense](./assets/dense-1.png)
 
-Dense değeri uygulanan:
+When applying the `dense` value:
 
 ![grid-dense](./assets/dense-2.png)
 
-Bu değerin kullanılması, öğelerin sıralamasının bozuk görünmesine neden olabilir, çünkü fazladan kalan ızgara boşluklarına, uygun olan öğe doldurulduğunda sıralama otomatik olarak değişmiş olur. Bu nedenle bu değer kullanımı her durum için uygun değildir.
+Using this value may lead to a distorted visual order of items, as the order changes automatically when an item fills in the remaining grid gaps. Therefore, this value may not be suitable for every situation.
 
-## Izgara Öğeleri: Öğeleri ızgaraya yerleştirme <a name="grid-items"></a>
+## Grid Items: Placing Items on the Grid <a name="grid-items"></a>
 
-Yukarıdaki örneklerde, ızgarayı oluşturan ızgara kapsayıcısının özelliklerine baktık. Izgara kapsayıcısına uygulanan bu özelliklerin, ızgaranın yapısını tanımlamak için kullanıldığını gördük. Bu bölümde ızgara öğelerinin özelliklerine bakarak, öğeleri ızgara düzeni içinde nasıl konumlandırabileceğimize bakacağız.
+In the above examples, we looked at the properties of the grid container that forms the grid. We saw that these properties applied to the grid container are used to define the structure of the grid. In this section, we will examine the properties of grid items to understand how we can position items within the grid layout.
 
-Bu özelliklere geçmeden önce, bir ızgara düzeni oluşturduğumuzda ortaya çıkan ızgara çizgilerini anlamamız gerekiyor. Izgara terimlerinde bahsettiğimiz ızgara çizgileri kısaca, ızgara öğelerini konumlandırmamızı kolaylaştırmak için ızgara kapsayıcısı tarafından oluşturulan numaralı çizgilerdir. Bu çizgiler ızgara öğelerimizi konumlandırırken bizlere yardımcı olur.
+Before diving into these properties, it's essential to understand the grid lines that emerge when we create a grid layout. The grid lines we mention briefly in grid terms are numbered lines created by the grid container to facilitate the positioning of grid items. These lines assist us in placing our grid items.
 
-Izgara öğelerini, ızgara düzenine yerleştirmenin birden çok yöntemi vardır. Şimdi bu yöntemlere sırasıyla bakalım.
+There are multiple methods for placing grid items within a grid layout. Let's explore these methods one by one.
 
-İlk olarak, bir ızgara öğesini ızgaraya yerleştirmek için, başladığı ve bitmesini istediğimiz ızgara çizgisini belirterek konumlandırma yapabiliriz. Bu tanımları aşağıdaki ızgara öğe özelliklerini kullanarak yapıyoruz.
+Firstly, to place a grid item on the grid, we can specify the starting and ending grid lines by using the grid item properties below.
 
 - grid-column-start
 - grid-column-end
@@ -465,11 +462,11 @@ Izgara öğelerini, ızgara düzenine yerleştirmenin birden çok yöntemi vard�
 }
 ```
 
-Bu kod bloğu, ızgara düzeni içerisindeki öğeleri satır çizgi numaralarına göre konumlandırır.
+This code block positions the items within the grid layout based on the row line numbers.
 
 ![grid-item](./assets/grid-item-1.png)
 
-`grid-column` ve `grid-row` özellikleriyle yukarıdaki tanımlamayı daha da kısa hale getirebiliyoruz.
+We can further simplify the above definition using the `grid-column` and `grid-row` properties.
 
 ```css
 .header {
@@ -478,7 +475,7 @@ Bu kod bloğu, ızgara düzeni içerisindeki öğeleri satır çizgi numaraları
 }
 ```
 
-Ayrıca `grid-area` özelliği sayesinde bu dört değeri tek bir satırda yazabiliyoruz.
+Additionally, thanks to the `grid-area` property, we can write these four values in a single line.
 
 ```css
 /* grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
@@ -488,15 +485,15 @@ Ayrıca `grid-area` özelliği sayesinde bu dört değeri tek bir satırda yazab
 }
 ```
 
-### Adlandırılmış ızgara çizgilerini kullanma <a name="grid-lines"></a>
+### Using Named Grid Lines <a name="grid-lines"></a>
 
-Yukarıda, ızgara öğelerini, başlangıç ve bitiş çizgi numaraları belirterek konumlandırmıştık. Bu kullanım daha karmaşık ızgara düzenlerimizde anlaması zor bir duruma gelebilir. Bu sebepten dolayı burada ızgara çizgilerini adlandırmak ve ardından adlandırılmış bu ızgara çizgilerini kullanarak ızgara öğelerini konumlandırmak, ızgara düzeni için daha anlaşılır bir yapı kurmayı sağlar.
+Above, we positioned grid items by specifying start and end line numbers. This approach can become challenging to understand in more complex grid layouts. Therefore, naming grid lines and then placing grid items using these named lines provides a clearer structure for grid layouts.
 
-Izgara düzeni içerisinde `grid-template-rows` ve `grid-template-columns` özellikleri ile tanımladığımız satar ve sütun çizgilerini isimlendirebiliyoruz. Bu ızgara çizgilerini isimlendirirken, köşeli parantez `[]` içinde belirtiyoruz. Bu isimleri istediğimiz gibi belirleyebiliriz fakat ızgara düzeninin anlaşılabilir ve okunabilir olması için anlamlı isimler vermek faydalı olacaktır.
+Within the grid layout, we can name the rows and columns defined by the `grid-template-rows` and `grid-template-columns` properties. When naming these grid lines, we enclose the names in square brackets `[]`. While we can choose any names we like, it's beneficial to provide meaningful names for a clear and readable grid layout.
 
-Yukarıdaki örneği, ızgara çizgilerini isimlendirerek yeniden oluşturalım.
+Let's recreate the above example by naming the grid lines.
 
-Burada bir çizgiye birden fazla isim tanımlayabiliyoruz. Bu, aslında her çizginin ızgara içindeki konumuna göre iki farklı adnının olması anlamına geliyor. İki farklı ismi tek bir köşeli parantez içinde belirtiyoruz.
+Here, we can assign multiple names to a single line. This implies that each line has two different names based on its position within the grid. We specify the two different names within a single pair of square brackets.
 
 ```css
 .grid-container {
@@ -507,7 +504,7 @@ Burada bir çizgiye birden fazla isim tanımlayabiliyoruz. Bu, aslında her çiz
 }
 ```
 
-Oluşturduğumuz çizgi isimlerini ızgara öğelerine yerleştirelim.
+Let's place the grid line names we created on the grid items.
 
 ```css
 .header {
@@ -533,11 +530,11 @@ Oluşturduğumuz çizgi isimlerini ızgara öğelerine yerleştirelim.
 
 ![grid-line-names](./assets/grid-names-1.png)
 
-### Adlandırılmış ızgara alanlarını kullanma <a name="grid-line-named"></a>
+### Using Named Grid Areas <a name="grid-line-named"></a>
 
-Izgara öğelerini ızgaraya yerleştirmenin farklı bir yolu ise `grid-template-areas` özelliğini kullanarak, ızgara alanlarını isimlendirmektir.
+Another way to position grid items on the grid is by naming grid areas using the `grid-template-areas` property.
 
-Izgara öğelerimize `grid-area` özelliği ile özel alan isimleri oluşturduktan sonra, bu özel alan isimlerini, `grid-template-areas` özelliği ile ızgara kapsayıcımızda belirtiyoruz.
+After creating custom area names for our grid items with the `grid-area` property, we specify these custom area names in our grid container using the `grid-template-areas` property.
 
 ```html
 <div class="grid-container">
@@ -548,9 +545,9 @@ Izgara öğelerimize `grid-area` özelliği ile özel alan isimleri oluşturdukt
 </div>
 ```
 
-Burada öğelerin yerleşimi CSS ile yapılacağı için yukarıdaki HTML elementlerinin sıralamasının önemi yoktur.
+Here, since the positioning of items will be done with CSS, the order of the HTML elements above is not important.
 
-Izgara öğelerimize özel alan isimleri tanımlayalım.
+Let's define custom area names for our grid items.
 
 ```css
 .header {
@@ -570,7 +567,7 @@ Izgara öğelerimize özel alan isimleri tanımlayalım.
 }
 ```
 
-Ardından ızgara kapsayıcısında, adlandırılmış alanları yerleştirelim.
+Next, let's place the named areas in the grid container.
 
 ```css
 .grid-container {
@@ -587,9 +584,9 @@ Ardından ızgara kapsayıcısında, adlandırılmış alanları yerleştirelim.
 
 ![grid-areas](./assets/grid-areas.png)
 
-Yukarıda ki yerleşimde, tırnak içindeki her bölüm bir satırı ve her kelime ise bir sütunu temsil eder. Buradaki en önemli nokta, her satırın eşit sayıda alana sahip olması gerekir.
+In the layout above, each section within the quotes represents a row, and each word represents a column. The crucial point here is that each row must have an equal number of areas.
 
-Aşağıdaki kullanım yanlıştır ve atadığımız değerler geçersiz kabul edilir.
+The following usage is incorrect and the assigned values will be considered invalid.
 
 ```css
 .grid-container {
@@ -600,7 +597,7 @@ Aşağıdaki kullanım yanlıştır ve atadığımız değerler geçersiz kabul 
 }
 ```
 
-İlk örneğimizde eşit sayıda bir ızgara alanı oluşturduk. Bazı durumlarda eşit olmayan alanlar için boş alanlar tanımlamamız gerekir. Bu boş alanı tanımlamak için `grid-template-areas` özelliği içinde boşluk gelen alana nokta (.) koyarak, belirli bir hücreye ızgara alanı atamak istemediğimizi belirletebiliyoruz. Ayrıca tek nokta yerine bitişik nokta dizisi(......)'de tanımlayabilmek, görsel anlamda isim genişliklerinin dikey eksende aynı hizada olmasını sağlıyor.
+In our initial example, we created an equal number of grid areas. In some cases, we need to define empty areas for unequal sections. To define empty areas within the `grid-template-areas` property, we use a period (.) in the space where we want to specify a grid area for which we don't want to assign a name. Additionally, using a series of consecutive dots (......) instead of a single dot helps maintain vertical alignment for visual consistency in the width of the area names.
 
 ```css
 .grid-container {
@@ -622,11 +619,11 @@ Aşağıdaki kullanım yanlıştır ve atadığımız değerler geçersiz kabul 
 
 ![grid-areas](./assets/grid-areas-2.png)
 
-##### Kullanma kuralları:
+#### Usage rules:
 
-`grid-template-areas` özelliğini kullanırken bazı dikkat etmemiz gereken kurallar vardır. Bunlardan bir tanesi yukarıda bahsettiğimiz her satırın eşit sayıda alan içermesiydi. Şimdi diğer bazı kurallara bakalım.
+When using the `grid-template-areas` property, there are certain rules to keep in mind. One of them is ensuring that each row contains an equal number of areas, as mentioned earlier. Now, let's look at some other rules.
 
-- Tek bir ızgara alanı noktayla ayrılmaz.
+- A single grid area should not be separated by dots.
 
 ```css
 .grid-container {
@@ -637,9 +634,7 @@ Aşağıdaki kullanım yanlıştır ve atadığımız değerler geçersiz kabul 
 }
 ```
 
-<br>
-
-- Bir alan yalnızca ya yatay ya da dikey alanda yerleşebilir.
+- An area can only span either horizontally or vertically, not both.
 
 ```css
 .grid-container {
@@ -650,21 +645,21 @@ Aşağıdaki kullanım yanlıştır ve atadığımız değerler geçersiz kabul 
 }
 ```
 
-## Izgara Hizalama: Izgarayı ve Izgara Öğelerini Hizalama <a name="grid-alignment"></a>
+## Grid Alignment: Aligning the Grid and Grid Items <a name="grid-alignment"></a>
 
-### Satır ve sütun ekseni <a name="row-column-axis"></a>
+### Row and Column Axes <a name="row-column-axis"></a>
 
-CSS Izgara düzeni, içeriğin satırlar ve sütunlar halinde yerleştirilmesini sağlayan iki boyutlu bir düzen yöntemidir. Bu düzen yönteminde satır ve sütun olmak üzere iki eksenimiz vardır. Satır ekseninin akış yönü, yukarıdan aşağıya, sütun ekseninin ise soldan sağadır.
+CSS Grid layout is a two-dimensional layout method that allows content to be placed in rows and columns. In this layout method, we have two axes: the row axis and the column axis. The flow direction of the row axis is from top to bottom, while the column axis flows from left to right.
 
 ![grid-axis](./assets/axis.png)
 
-### Izgara hizalama özellikleri <a name="align-feature"></a>
+### Grid Alignment Properties <a name="align-feature"></a>
 
-Izgara düzeninde kullanılan hizalama özelliklerinin çoğu, CSS’in kutu hizalama modülünün bir parçasıdır. Bu özellikler diğer CSS bağlamlarında da kullanılır.
+Most of the alignment properties used in the grid layout are part of CSS's box alignment module. These properties are also used in other CSS contexts.
 
 #### justify-items:
 
-Izgara öğelerini satır ekseni boyuncu hizalar.
+Grid items are aligned along the row axis.
 
 ```css
 .grid-container {
@@ -676,7 +671,7 @@ Izgara öğelerini satır ekseni boyuncu hizalar.
 
 #### align-items:
 
-Izgara öğelerini sütun ekseni boyunca hizalar.
+Grid items are aligned along the column axis.
 
 ```css
 .grid-container {
@@ -688,7 +683,7 @@ Izgara öğelerini sütun ekseni boyunca hizalar.
 
 #### place-items:
 
-`place-items`, `justify-items` ve `align-items` özelliklerini tek bir satırda tanımlamamızı sağlar.
+The `place-items`, `justify-items`, and `align-items` properties allow us to define them in a single line.
 
 ```css
 /* place-items: [align-items] / [justify-items] */
@@ -698,7 +693,7 @@ Izgara öğelerini sütun ekseni boyunca hizalar.
 }
 ```
 
-Eğer ikinci değer belirtilmezse, iki özellik için de tek değer belirtilmiş olur.
+Indeed, if the second value is not specified, a single value is used for both properties. Here's an example:
 
 ```css
 /* 
@@ -713,7 +708,7 @@ align-items: center
 
 #### justify-content:
 
-Bazı durumlarda ızgara öğelerinin toplam boyutu, ızgara kapsayıcısının boyutundan daha küçük olabilir. `justify-content` özelliği tam da bu gibi durumlarda çalışır. Izgara kapsayıcısının içindeki öğeleri tek bir öğe gibi görüp, bu öğelerin hizalanmasını sağlar.
+In some cases, the total size of grid items may be smaller than the size of the grid container. The `justify-content` property works in such situations. It treats the items inside the grid container as a single item and aligns these items accordingly.
 
 ```css
 .grid-container {
@@ -726,7 +721,7 @@ Bazı durumlarda ızgara öğelerinin toplam boyutu, ızgara kapsayıcısının 
 
 #### align-content:
 
-`align-content` özelliği, ızgara öğelerinin toplam yüksekliği, ızgara kapsayıcısının yüksekliğinden küçük olduğu durumlarda satır bazında çalışır.
+The `align-content` property works on a row basis when the total height of grid items is smaller than the height of the grid container.
 
 ```css
 .grid-container {
@@ -739,11 +734,9 @@ Bazı durumlarda ızgara öğelerinin toplam boyutu, ızgara kapsayıcısının 
 
 #### place-content:
 
-`place-content`, `align-content` ve `justify-content` özelliklerinin tek bir satırda tanımlanmasını sağlar. `place-items` özelliği için geçerli olan durumlar `place-content` için de geçerlidir.
+The `place-content`, `align-content`, and `justify-content` properties allow defining them in a single line. The conditions that apply to the place-items property also apply to `place-content`.
 
-<br>
-
-Yukarıdaki özelliklerin hepsi ızgara kapsayıcısına uygulanan hizalama özellikleriydi. Bazı hizalama özellikleri ise ızgara öğelerine uygulanır. Bunlar:
+The above properties were alignment properties applied to the grid container. However, some alignment properties are applied to grid items. These are:
 
 - align-self
 - justify-self
@@ -751,7 +744,7 @@ Yukarıdaki özelliklerin hepsi ızgara kapsayıcısına uygulanan hizalama öze
 
 #### justify-self:
 
-Izgara içindeki tanımlanmış ızgara öğesini satır ekseni boyunca hizalar. justify-items özelliğinden tek farkı sadece tek bir öğeye uygunlanmasıdır.
+Aligns the specified grid item along the row axis inside the grid. The only difference from the `justify-items` property is that it applies to a single item only.
 
 ```css
 .grid-container {
@@ -763,7 +756,7 @@ Izgara içindeki tanımlanmış ızgara öğesini satır ekseni boyunca hizalar.
 
 #### align-self:
 
-Izgara içindeki tanımlanmış ızgara öğesini sütun ekseni boyunca hizalar.
+Aligns the specified grid item along the column axis inside the grid.
 
 ```css
 .grid-container {
@@ -775,7 +768,7 @@ Izgara içindeki tanımlanmış ızgara öğesini sütun ekseni boyunca hizalar.
 
 #### place-self:
 
-`place-items` ve `place-content` ile aynı mantıkta çalışır. `justify-self` ve `align-self` özelliklerini tek bir satırda tanımlamamızı sağlar.
+Works in the same logic as `place-items` and `place-content`. Allows us to define `justify-self` and `align-self` properties in a single line.
 
 ```css
 /* place-self: [align-self] / [justify-self] */
@@ -785,9 +778,9 @@ Izgara içindeki tanımlanmış ızgara öğesini sütun ekseni boyunca hizalar.
 }
 ```
 
-### Izgara öğelerini sıralama <a name="grid-order"></a>
+### Grid Item Ordering <a name="grid-order"></a>
 
-Bir ızgara düzeninde, tanımlanan `order` değeri, ızgara öğelerinin yerleşim sırasını belirlememizi sağlar.
+In a grid layout, the specified `order` value allows us to determine the placement order of grid items.
 
 ```html
 <div class="grid-container">
@@ -812,38 +805,38 @@ Bir ızgara düzeninde, tanımlanan `order` değeri, ızgara öğelerinin yerle�
 
 ![grid-order](./assets/order.png)
 
-## Izgara Denetçi Aracı <a name="grid-inspector"></a>
+## Grid Inspector Tool <a name="grid-inspector"></a>
 
-Izgara denetleme aracı, tarayıcı üzerinden, oluşturduğumuz ızgara düzenimizin kodunu görselleştirmeye, incelemeye ve düzenlemeye yarayan bir araçtır. Karmaşık ızgara düzenlerimizde, ızgarayı görsel anlamda yorumlamak için oldukça faydalıdır.
+The Grid Inspector tool is a browser feature that allows us to visualize, inspect, and edit the code of our grid layout directly in the browser. It is quite useful for interpreting the grid visually, especially in complex grid layouts.
 
-Bu araç, önceden sadece Firefox tarayıcısına özeldi. Daha sonra diğer tarayıcılara da, Firefox aracı kadar kapsamlı olmasa da, bu özellik geldi. Diğer tarayıcılardaki özelliklerin yeni olmasından dolayı, aşağıdaki örnekleri Firefox aracı üzerinden göstereceğim.
+This tool was initially exclusive to the Firefox browser. Later on, other browsers also introduced similar features, though not as comprehensive as the Firefox tool. Since the features in other browsers are relatively new, I'll provide examples using the Firefox tool.
 
-Bu aracı kullanmak için, sayfayı sağ tıklayıp Inspect Element öğesisin seçerek geliştirici ayarlarını açın.
+To use this tool, right-click on the page and select "Inspect Element" to open the developer tools.
 
-### Izgaraları Görselleştirme
+### Visualizing Grids
 
-Izgara düzenlerimizi görselleştirmenin iki yolu vardır.
+There are two ways to visualize our grid layouts:
 
-- HTML paneli içerisinde, ızgara elemanımızın yanındaki küçük `grid` simge butonuna tıklayarak,
-- CSS panelindeki, stil bölümünde `display: grid` tanımlanmış elemanın yanında bulunan ızgara ikonuna tıklayarak görebiliriz.
+- Within the HTML panel, by clicking on the small grid icon next to our grid element.
+- In the CSS panel, in the style section, by clicking on the grid icon next to the element where `display: grid` is defined.
 
 ![grid-devtools](./assets/browser-devtools.png)
 
-Bu görselleştirme özelliğini aktif ettiğimizde,
+When we activate this visualization feature, we can see:
 
-- Izgara satırlarını ve sütunlarını tanımlayan çizgileri,
-- Izgara izleri arasındaki boşluğu,
-- Satır ve sütun numaralarını,
-- Izgara çizgisi adlarını ve ızgara alan adlarını görebiliriz.
+- The lines defining grid rows and columns,
+- The gaps between grid tracks,
+- Row and column numbers,
+- Grid line names and grid area names.
 
-### Düzen Paneli
+### Layout Panel
 
-Düzen paneli, bir sayfaya ızgaralar eklendiğinde, bu ızgaraları görüntülemek ve bazı düzenlemeler yapmak için çeşitli ayar seçenekleri içeren bir bölüm sunar. Bu bölümden;
+The layout panel provides various settings to view and make some adjustments to grids when they are added to a page. From this section, you can:
 
-- Satır ve sütun numaraları aktif hale getirebilme,
-- Satır isimlerini gösterip, gizleyebilme,
-- Kılavuz çizgilerini genişletebilme,
-- Izgaranızın mini görünümünü görüntüleme, gibi bazı düzenlemeleri yapabiliriz.
+- Enable and disable row and column numbers,
+- Show or hide row names,
+- Expand guide lines,
+- View the mini map of your grid, and more.
 
 <figure >
   <video controls="true" allowfullscreen="true">
@@ -851,17 +844,17 @@ Düzen paneli, bir sayfaya ızgaralar eklendiğinde, bu ızgaraları görüntül
   </video>
 </figure>
 
-## Tarayıcı Desteği <a name="grid-support"></a>
+## Browser Support <a name="grid-support"></a>
 
-Mart 2017’ye kadar ızgara düzeni için tarayıcı desteği bulunmuyordu. Sadece Internet Explorer ve Microsoft Edge desteğe sahip tek tarayıcılardı. Ancak o zaman bile `-ms-` ön eki ile birlikte kullanılabiliyordu.
+Until March 2017, there was no browser support for the grid layout. Only Internet Explorer and Microsoft Edge were the browsers that supported it, even though it required the `-ms-` prefix.
 
-Ancak Mart 2017’de, CSS Grid, büyük tarayıcıların neredeyse hepsini desteklere duruma geldi ve kullanıma sunuldu. Bugün itibariyle %95’lik bir tarayıcı desteği var.
+However, as of March 2017, CSS Grid became widely supported by major browsers and was officially released. As of today, it has around 95% browser support.
 
 ![grid-caniuse](./assets/browser-support.png)
 
-Katkılarından dolayı <a href="https://twitter.com/fatihhayri" target="_blank">Fatih Hayrioğlu</a>’na çok teşekkür ederim.
+I would like to express my sincere thanks to <a href="https://twitter.com/fatihhayri" target="_blank">Fatih Hayrioğlu</a> for his contributions.
 
-#### Kaynaklar
+#### Resources:
 
 - [https://fatihhayrioglu.com/css-grid-giris/](https://fatihhayrioglu.com/css-grid-giris/)
 - [https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)

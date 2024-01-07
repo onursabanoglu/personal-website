@@ -18,6 +18,7 @@
         font-size: calc(var(--f-size-default) * 1.125);
         color: var(--c-gray-80);
         font-weight: var(--f-weight-normal);
+        letter-spacing: -0.025em;
 
         &:matches(:hover, :focus) {
           text-decoration: underline;
